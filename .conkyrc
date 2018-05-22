@@ -41,7 +41,7 @@ conky.config = {
 	font = 'DejaVu Sans Mono:size=8',
 	gap_x = 5,
 	gap_y = 60,
-	maximum_width = 200,
+	maximum_width = 210,
 	minimum_height = 5,
 	minimum_width = 5,
 	net_avg_samples = 2,
@@ -58,8 +58,8 @@ conky.config = {
 	update_interval = 1.0,
 	uppercase = false,
 	use_spacer = 'none',
-	show_graph_scale = false,
-	show_graph_range = false,
+	show_graph_scale = true,
+	show_graph_range = true,
 	double_buffer = true
 }
 
@@ -71,23 +71,23 @@ ${color grey}Battery: ${color}${battery_time}
   $color${battery_percent}% ${battery_bar}
 $hr
 ${color grey}Uptime:$color $uptime
-#${color grey}Frequency (in MHz):$color $freq
-#${color grey}Frequency (in GHz):$color $freq_g
 ${color grey}RAM Usage:$color $mem/$memmax
   $memperc% ${membar 4}
 ${color grey}Swap Usage:$color $swap/$swapmax
   $swapperc% ${swapbar 4}
-${color grey}CPU Usage:$color
+${color grey}CPU Usage:$color ${acpitemp}°C
+#${color grey}Frequency (in MHz):$color $freq
   $cpu% ${cpubar 4}
+${color grey}Frequency (GHz):$color $freq_g
 $cpugraph
 $hr
 ${color grey}File systems:
-${color grey}root: ${color}${fs_used /}/${fs_size /}
+${color lightgrey}root: ${color}${fs_used /}/${fs_size /}
   ${fs_used_perc /}% ${fs_bar 6 /}
-${color grey} ESP: $color${fs_used /boot/efi}/${fs_size /boot/efi}
+${color lightgrey} ESP: $color${fs_used /boot/efi}/${fs_size /boot/efi}
   ${fs_used_perc /boot/efi}% ${fs_bar 6 /boot/efi}
 $hr
-${color grey}WiFi: ${color}${wireless_essid wlp3s0} | ${addr wlp3s0}
+${color grey}WiFi: ${color}${wireless_essid wlp3s0} ${color grey}|${color} ${addr wlp3s0}
 ${color grey}Up:$color ${upspeed wlp3s0} ${color grey} - Down:$color ${downspeed wlp3s0}
 ${downspeedgraph wlp3s0}
 ${color grey}Ethernet: ${color}${addr enp2s0f0}
