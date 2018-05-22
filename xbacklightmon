@@ -1,0 +1,14 @@
+#!/bin/bash
+
+path=/sys/class/backlight/intel_backlight
+
+luminance() {
+	actual=$(( $(cat "$path"/actual_brightness) * 100 ))
+	max=$(( $(cat "$path"/max_brightness) * 100 ))
+	printf '%d' $(( $actual * 100 / $max ))
+}
+
+xbacklight -set "$(luminance)"
+inotifywait -me modify --format '' "$path"/brightness | while read; do
+    xbacklight -set "$(luminance)"
+done

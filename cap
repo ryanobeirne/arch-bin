@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in /boot/efi/screenshot_*; {
+	[[ $(wc -c "$i" | awk '{print $1}') -gt 0 ]] && sudo cp "$i" ~/Desktop/
+	printf '' | sudo tee "$i"
+}

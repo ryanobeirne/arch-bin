@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+main () {
+	local package="$1"
+	local repo=~/repos/"$package"
+	if [ -d $repo ]; then
+		cd "$repo" && git fetch && git pull || return 1
+	else
+		git clone "https://aur.archlinux.org/$package.git" "$repo" && cd "$repo" || {
+			[ -d "$repo" ] && rm -r "$repo"
+			return 1
+		}
+	fi
+	makepkg -fsic
+	cd - &> /dev/null
+}
+
+for i in "$@"; do
+	main "$i"
+done

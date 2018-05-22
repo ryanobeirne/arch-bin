@@ -1,0 +1,28 @@
+#!/bin/bash
+gitlog () {
+  git log $@ | vimpager
+}
+gitdiff () {
+  git diff $@ | vimpager
+}
+lass () {
+	gls -alhv --color=always $@ | less -R
+}
+colo () {
+	for i in $(seq 30 38); do
+		printf '%b ' "\e[0;7;${i}m $i \e[1m $i \e[m"
+	done
+	echo
+}
+rustcr () {
+        rustc "$1" && $(realpath "${1%.*}")
+}
+math () {
+	awk "BEGIN {print $@ }"
+}
+vimupdate () {
+  (
+    cd ~/bin/.vim
+    git fetch --recurse-submodules && git pull --recurse-submodules
+  )
+}

@@ -1,0 +1,36 @@
+#!/bin/bash
+
+[[ $UID == 0 ]] || { echo "User must be root" >&2; exit 1; }
+iso="$1"
+disk="$2"
+[[ $(echo "$disk" | grep sda) ]] && { echo "Don't do that to '$disk'"; exit 1; }
+[[ -r "$iso" && -b "$disk" ]] || { echo "File not found!" >&2; exit 1; } 
+mtpt=/tmp/mnt
+
+if [[ -e "$mtpt" ]]; then
+	echo "Mount point '$mtpt' already exists."
+	exit 1
+else
+	printf '%s\n%s' "WARNING! '$disk' will be erased and cannot be undone!" "Write '$iso' to '$disk'? [y/n] " 
+	read yn
+	if [[ "$yn" == "y" ]]; then
+		[[ $(mount | grep "$disk") ]] && umount "$disk"
+		echo; mkdir -p "$mtpt"/{iso,usb}
+	else
+		exit 1
+	fi
+fi &&
+
+
+mkfs.vfat "$disk" &&
+mount -o loop "$iso" "$mtpt/iso" &&
+mount "$disk" "$mtpt/usb" &&
+rsync -a "$mtpt/iso/" "$mtpt/usb" &&
+sync && success=true
+
+umount "$mtpt/iso"
+umount "$mtpt/usb"
+rmdir "$mtpt/iso" "$mtpt/usb"
+rmdir "$mtpt"
+
+[[ "$success" ]] && echo "'$iso' written to '$disk' successfully."
