@@ -26,3 +26,7 @@ vimupdate () {
     git fetch --recurse-submodules && git pull --recurse-submodules
   )
 }
+say () 
+{ 
+	espeak -v english-us "$@" 2> /dev/null
+}
