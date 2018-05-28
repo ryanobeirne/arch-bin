@@ -47,4 +47,6 @@ let g:onedark_color_overrides = {
 \}
 colorscheme onedark
 hi Search cterm=NONE ctermfg=NONE ctermbg=black
-
+" Toggle highlight.
+let hlstate=0
+nnoremap <ESC><ESC> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>
