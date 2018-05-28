@@ -80,7 +80,7 @@ ${color1}Kernel: ${alignr}${color0}$sysname $kernel
 ${color1}CPU: ${alignr}${color0}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-27}
 ${color1}Uptime:$color ${alignr}$uptime
 $hr
-${color1}Battery: ${color}${battery_time}
+${color1}Battery: ${color}${battery_time} ${alignr}${exec cat /sys/class/power_supply/BAT0/status}
   $color${battery_percent}% ${battery_bar}
 $hr
 ${color1}RAM Usage:$color $mem/$memmax
