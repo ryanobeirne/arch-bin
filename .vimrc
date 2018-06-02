@@ -47,6 +47,12 @@ let g:onedark_color_overrides = {
 \}
 colorscheme onedark
 hi Search cterm=NONE ctermfg=NONE ctermbg=black
+
 " Toggle highlight.
 let hlstate=0
-nnoremap <ESC><ESC> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>
+nnoremap <ESC><ESC> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<CR>
+
+" Sessions
+let g:session_dir = '~/.vim/sessions'
+exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
