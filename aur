@@ -11,7 +11,7 @@ main () {
 			return 1
 		}
 	fi
-	makepkg -fsic
+	${EDITOR:-vim} PKGBUILD && makepkg -fsic
 	cd - &> /dev/null
 }
 
