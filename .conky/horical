@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+today=($(date '+%m %d %a'))
+this_month=${today[0]}
+this_day=${today[1]}
+daysin_this_month=($(cal | sed 1,2d))
+
+print_weekdays () {
+	local c
+	for day in "${daysin_this_month[@]}"; do
+		local weekday=$(date -d "$this_month/$day" '+%a' | cut -c1-2)
+		weekday="${weekday^^}"
+		
+		if [[ "$day" -eq "$this_day" ]]; then
+			c='${color0}' c2='${color}'
+		elif [[ "${weekday}" == S* ]]; then
+			c='${color1}' c2='${color}'
+		else
+			unset c c2
+		fi
+			
+		printf "${c}%s${c2}  " "$weekday"
+	done | sed 's/  $//'
+	echo
+}
+
+print_daynums () {
+	local c
+  for day in "${daysin_this_month[@]}"; do
+		[[ "$day" -eq "$this_day" ]] && { c='${color0}' c2='${color}'; } || unset c c2
+		printf "${c}%02d${c2}  " "${day}"
+	done | sed 's/  $//'
+	echo
+}
+
+[ "$1" == "-w" ] && print_weekdays
+[ "$1" == "-n" ] && print_daynums
+[[ "$@" ]] || {
+	print_weekdays
+	print_daynums
+}

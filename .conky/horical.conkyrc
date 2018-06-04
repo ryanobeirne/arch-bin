@@ -1,0 +1,50 @@
+conky.config = {
+	alignment = 'middle_middle',
+	background = false,
+	border_width = 1,
+	default_color = '#237ab0',
+	color0 = 'white',
+	color1 = '#97d8f4',
+	color2 = 'lightgrey',
+	color3 = 'black',
+	color4 = '#237ab0',
+	default_outline_color = 'white',
+	default_shade_color = 'black',
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_outline = false,
+	draw_shades = true,
+	use_xft = true,
+	font = 'DejaVu Sans Mono:size=10',
+	gap_x = 0,
+	gap_y = -325,
+	maximum_width = 1440,
+	minimum_height = 5,
+	minimum_width = 5,
+	net_avg_samples = 2,
+	no_buffers = true,
+	out_to_console = false,
+	out_to_stderr = false,
+	extra_newline = false,
+	own_window = true,
+	own_window_class = 'Conky',
+	own_window_type = 'desktop',
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	stippled_borders = 0,
+	update_interval = 10,
+	uppercase = false,
+	use_spacer = 'none',
+	show_graph_scale = true,
+	show_graph_range = false,
+	double_buffer = true,
+	text_buffer_size = 1024
+}
+
+conky.text = [[
+${alignc}${color1}${exec date '+%A %d %B %Y' | tr [:lower:] [:upper:]}${color}
+$hr
+${alignc}${eval ${exec ~/.conky/horical -w}}
+${alignc}${eval ${exec ~/.conky/horical -n}}
+$hr
+]]

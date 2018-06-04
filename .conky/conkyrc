@@ -78,6 +78,7 @@ $hr
 ${color1}Hostname: ${alignr}${color0}$nodename
 ${color1}Kernel: ${alignr}${color0}$sysname $kernel
 ${color1}CPU: ${alignr}${color0}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-27}
+${color1}GPU:  ${alignr}${color0}AMD Radeon HD 6770M
 ${color1}Uptime:$color ${alignr}$uptime
 $hr
 ${color1}Battery: ${color}${battery_time} ${alignr}${exec cat /sys/class/power_supply/BAT0/status}
