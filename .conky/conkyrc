@@ -65,7 +65,8 @@ conky.config = {
 	use_spacer = 'none',
 	show_graph_scale = true,
 	show_graph_range = false,
-	double_buffer = true
+	double_buffer = true,
+	text_buffer_size = 256
 }
 
 conky.text = [[
@@ -76,10 +77,11 @@ ${color1}UNIX Time: ${alignr}${color0}${utime %s}
 ${color1}UTC: ${alignr}${color0}${utime}
 $hr
 ${color1}Hostname: ${alignr}${color0}$nodename
+${color1}Uptime:$color ${alignr}$uptime
 ${color1}Kernel: ${alignr}${color0}$sysname $kernel
 ${color1}CPU: ${alignr}${color0}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-27}
-${color1}GPU:  ${alignr}${color0}AMD Radeon HD 6770M
-${color1}Uptime:$color ${alignr}$uptime
+${color1}GPU:
+${color0}${execi 1000 lspci | grep VGA | sed 's/.*: //; s/^/+ /' | fold -sw 35}
 $hr
 ${color1}Battery: ${color}${battery_time} ${alignr}${exec cat /sys/class/power_supply/BAT0/status}
   $color${battery_percent}% ${battery_bar}
