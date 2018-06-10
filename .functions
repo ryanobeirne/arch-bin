@@ -6,13 +6,12 @@ gitdiff () {
   git diff $@ | vimpager
 }
 lass () {
-	gls -alhv --color=always $@ | less -R
+	ls -alhv --color=always $@ | less -IR
 }
 colo () {
-	for i in $(seq 30 38); do
-		printf '%b ' "\e[0;7;${i}m $i \e[1m $i \e[m"
-	done
-	echo
+  for i in {30..37} {40..47}; do
+    printf "\e[${i}m%s:%s\t\e[1m%s\e[7m\t%s\e[m\n" "$i" " ██ REG ██ " " ██ BOLD ██ " " ██ REVERSE ██ "
+  done
 }
 rustcr () {
         rustc "$1" && $(realpath "${1%.*}")
