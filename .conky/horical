@@ -8,8 +8,7 @@ daysin_this_month=($(cal | sed 1,2d))
 print_weekdays () {
 	local c
 	for day in "${daysin_this_month[@]}"; do
-		local weekday=$(date -d "$this_month/$day" '+%a' | cut -c1-2)
-		weekday="${weekday^^}"
+		local weekday=$(date -d "$this_month/$day" '+%a' | cut -c1-2 | tr '[:lower:]' '[:upper:]')
 		
 		if [[ "$day" -eq "$this_day" ]]; then
 			c='${color0}' c2='${color}'
@@ -27,7 +26,13 @@ print_weekdays () {
 print_daynums () {
 	local c
   for day in "${daysin_this_month[@]}"; do
-		[[ "$day" -eq "$this_day" ]] && { c='${color0}' c2='${color}'; } || unset c c2
+
+		if [[ "$day" -eq "$this_day" ]]; then
+			c='${color0}' c2='${color}'
+		else
+			unset c c2
+		fi
+
 		printf "${c}%02d${c2}  " "${day}"
 	done | sed 's/  $//'
 	echo

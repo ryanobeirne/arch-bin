@@ -5,9 +5,6 @@ conky.config = {
 	default_color = '#237ab0',
 	color0 = 'white',
 	color1 = '#97d8f4',
-	color2 = 'lightgrey',
-	color3 = 'black',
-	color4 = '#237ab0',
 	default_outline_color = 'white',
 	default_shade_color = 'black',
 	draw_borders = false,
@@ -21,8 +18,6 @@ conky.config = {
 	maximum_width = 1440,
 	minimum_height = 5,
 	minimum_width = 5,
-	net_avg_samples = 2,
-	no_buffers = true,
 	out_to_console = false,
 	out_to_stderr = false,
 	extra_newline = false,
@@ -33,18 +28,17 @@ conky.config = {
 	own_window_argb_visual = true,
 	stippled_borders = 0,
 	update_interval = 10,
-	uppercase = false,
+	uppercase = true,
 	use_spacer = 'none',
 	show_graph_scale = true,
 	show_graph_range = false,
 	double_buffer = true,
-	text_buffer_size = 1024
+	text_buffer_size = 512
 }
 
 conky.text = [[
-${alignc}${color1}${exec date '+%A %d %B %Y' | tr [:lower:] [:upper:]}${color}
+${alignc}${color1}${time %A %d %B %Y}${color}
 $hr
-${alignc}${eval ${exec ~/.conky/horical -w}}
-${alignc}${eval ${exec ~/.conky/horical -n}}
+${alignc}${eval ${exec ~/.conky/horical}}
 $hr
 ]]
