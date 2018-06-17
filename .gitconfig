@@ -2,7 +2,7 @@
 	email = ryanobeirne@gmail.com
 	name = Ryan O'Beirne
 [core]
-	editor = vim
+	editor = vim -p
 [color]
 	branch = auto
 	diff = auto
@@ -20,3 +20,13 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[alias]
+	a = add
+	c = commit
+	cm = commit -m
+	d = diff
+	df = diff --follow
+	f = fetch
+	l = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit
+	lf = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit --follow
+	s = status
