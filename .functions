@@ -29,3 +29,8 @@ say ()
 { 
 	espeak -v english-us "$@" 2> /dev/null
 }
+rnb () {
+	cargo new --bin "$1" &&
+		cd "$1" &&
+		vim -p "src/main.rs" "Cargo.toml"
+}
