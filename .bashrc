@@ -22,4 +22,4 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export PS1="\[\033[m\]\n\[\033[31m\]\$(_status)\[\033[01;32m\][\[\033[34m\]\u:\[\033[36m\]\w\[\033[32m\]]\[\033[00m\]\$(__git_ps1)\n\\$ "
 export EDITOR=vim
 export PAGER=vimpager
-
+export GIT_PAGER=less
