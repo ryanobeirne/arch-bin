@@ -24,6 +24,19 @@ nnoremap <C-l> :tabnext<CR>
 nnoremap <C-h> :tabprev<CR>
 nnoremap <C-k> :tabfirst<CR>
 nnoremap <C-j> :tablast<CR>
+"" Select All
+nnoremap <leader>a ggVG
+vnoremap <leader>a <ESC>ggVG
+"" Paste from system register
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+"" Copy to system register
+nnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+vnoremap <leader>y "+y
+vnoremap <leader>Y "+Y
 "" NERDTree
 nnoremap <C-n> :NERDTree<CR>
 
@@ -56,3 +69,9 @@ nnoremap <ESC><ESC> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \
 let g:session_dir = '~/.vim/sessions'
 exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+
+" vimdiff highlighting
+highlight DiffAdd    cterm=bold ctermfg=NONE ctermbg=22 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=NONE ctermbg=52 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=NONE ctermbg=235  gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=NONE ctermbg=8  gui=none guifg=bg guibg=Red
