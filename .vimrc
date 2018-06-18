@@ -3,7 +3,7 @@ execute pathogen#infect()
 filetype plugin indent on
 
 set updatetime=100
-set nu
+set number cursorline
 syntax on
 set smartindent autoindent tabstop=2 softtabstop=2 shiftwidth=2
 set ignorecase smartcase
@@ -38,7 +38,7 @@ nnoremap <leader>Y "+Y
 vnoremap <leader>y "+y
 vnoremap <leader>Y "+Y
 "" NERDTree
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Enable crontab editing in place
 au BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
@@ -59,7 +59,8 @@ let g:onedark_color_overrides = {
 \ "black": {"gui": "NONE", "cterm": "NONE", "cterm16": "NONE" },
 \}
 colorscheme onedark
-hi Search cterm=NONE ctermfg=NONE ctermbg=black
+highlight Search cterm=NONE ctermfg=NONE ctermbg=black
+highlight CursorLine ctermbg=0
 
 " Toggle highlight.
 let hlstate=0
