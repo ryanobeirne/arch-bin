@@ -30,3 +30,4 @@
 	l = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit
 	lf = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit --follow
 	s = status
+	sp = status --porcelain
