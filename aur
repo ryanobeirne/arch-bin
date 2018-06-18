@@ -5,16 +5,20 @@ main () {
 	local repo=~/repos/"$package"
 	if [ -d $repo ]; then
 		cd "$repo" && git fetch && git pull || return 1
+		${EDITOR:-vim} PKGBUILD &&
+			makepkg -fsic ||
+			return
 	else
-		git clone "https://aur.archlinux.org/$package.git" "$repo" && cd "$repo" || {
-			[ -d "$repo" ] && rm -r "$repo"
-			return 1
-		}
+		curl --output /dev/null --silent --head --fail "https://aur.archlinux.org/packages/$package" &&
+			git clone "https://aur.archlinux.org/$package.git" "$repo" && 
+			cd "$repo" &&
+			${EDITOR:-vim} PKGBUILD &&
+			makepkg -fsic ||
+			return
+
 	fi
-	${EDITOR:-vim} PKGBUILD && makepkg -fsic
-	cd - &> /dev/null
 }
 
 for i in "$@"; do
-	main "$i"
+	( main "$i" )
 done
