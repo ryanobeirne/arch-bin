@@ -3,15 +3,15 @@ execute pathogen#infect()
 filetype plugin indent on
 
 set updatetime=100
-set number cursorline
+set number cursorline hlsearch
 syntax on
 set smartindent autoindent tabstop=2 softtabstop=2 shiftwidth=2
 set ignorecase smartcase
 set clipboard=unnamed
 let mapleader="-"
-set hls
 set tabpagemax=100
 set mouse=a
+set guifont=xos4\ Terminus\ 12
 
 " Keybindings
 "" Line navigation
@@ -56,11 +56,12 @@ let g:lightline = {
 \'colorscheme': 'twodark',
 \}
 let g:onedark_color_overrides = {
-\ "black": {"gui": "NONE", "cterm": "NONE", "cterm16": "NONE" },
+\ "black": {"gui": "#051421", "cterm": "NONE", "cterm16": "NONE" },
 \}
 colorscheme onedark
-highlight Search cterm=NONE ctermfg=NONE ctermbg=black
 highlight CursorLine ctermbg=0
+highlight Visual ctermbg=0
+highlight Search cterm=NONE ctermfg=NONE ctermbg=8
 
 " Toggle highlight.
 let hlstate=0
