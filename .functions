@@ -34,3 +34,6 @@ rnb () {
 		cd "$1" &&
 		vim -p "src/main.rs" "Cargo.toml"
 }
+precmd () {
+  printf "\e]0;${0##*/} :: TTY[${TTY##*/}] :: $PWD\7"
+}

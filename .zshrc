@@ -1,6 +1,7 @@
 sources=(
   /etc/zsh/zshrc.sh
 	/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
   ~/.aliases
   ~/.functions
 )
@@ -14,7 +15,7 @@ export HISTSIZE=20000
 export EDITOR='vim -p'
 export PAGER=vimpager
 export GIT_PAGER='less -IR'
-
+[[ $(echo $PATH | grep ~/bin) ]] || export PATH=$PATH:~/bin
 export LC_ALL=en_US.UTF-8
 # Load colors.
 autoload -U colors
