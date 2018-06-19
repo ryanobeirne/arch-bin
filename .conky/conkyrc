@@ -16,7 +16,7 @@ conky.config = {
 	draw_graph_borders = true,
 	draw_outline = false,
 	use_xft = true,
-	font = 'DejaVu Sans Mono:size=8',
+	font = 'xos4 Terminus:size=8',
 	gap_x = 5,
 	gap_y = 30,
 	maximum_width = 210,
@@ -43,7 +43,7 @@ conky.config = {
 }
 
 conky.text = [[
-${alignc}${color1}${font :pixelsize=40'}${time %l:%M %p}$font
+${alignc}${color1}${font xos4 Terminus:style=bold:pixelsize=36}${time %l:%M %p}$font
 ${alignc}${time %A} ${time %d} ${time %B} ${time %Y}
 
 ${color1}UNIX Time: ${alignr}${color0}${utime %s}

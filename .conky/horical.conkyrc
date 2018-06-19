@@ -12,7 +12,7 @@ conky.config = {
 	draw_outline = false,
 	draw_shades = true,
 	use_xft = true,
-	font = 'DejaVu Sans Mono:size=10',
+	font = 'xos4 Terminus:style=bold:size=12',
 	gap_x = 0,
 	gap_y = -325,
 	maximum_width = 1440,
@@ -37,7 +37,7 @@ conky.config = {
 }
 
 conky.text = [[
-${alignc}${color1}${time %A %d %B %Y}${color}
+${alignc}${color1}::${time %A %d %B %Y}::${color}
 $hr
 ${alignc}${eval ${exec ~/.conky/horical}}
 $hr
