@@ -17,7 +17,7 @@ rustcr () {
         rustc "$1" && $(realpath "${1%.*}")
 }
 math () {
-	awk "BEGIN {print $@ }"
+	awk "BEGIN {print $* }"
 }
 vimupdate () {
   (
@@ -36,4 +36,7 @@ rnb () {
 }
 precmd () {
   printf "\e]0;${0##*/} :: TTY[${TTY##*/}] :: $PWD\7"
+}
+__GPROMPT () {
+	~/repos/pretty-git-prompt/target/debug/pretty-git-prompt
 }

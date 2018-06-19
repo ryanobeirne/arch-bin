@@ -1,5 +1,6 @@
 #!/bin/bash
 alias sudo='sudo '
+alias watch='watch '
 alias la='ls -AlhvF --color=auto'
 alias ls='ls -v --color=auto'
 alias cd='cd -P'

@@ -22,10 +22,9 @@ autoload -U colors
 colors
 # Allow for functions in the prompt.
 setopt PROMPT_SUBST
-RPROMPT='$(~/repos/pretty-git-prompt/target/debug/pretty-git-prompt)'
 
 PROMPT='
-%B┌[%(?.$fg[green].$fg[red])%?$reset_color%B]┤%K{8}%F{magenta} %n%f:%F{6}%~ %f%k│%b
+%B┌[%(?.$fg[green].$fg[red])%?$reset_color%B]┤%K{8}%F{magenta} %n%f:%F{6}%~ %f%k│%b $(__GPROMPT)
 %B└─▶ %#%b '
 
 export SPROMPT="Come on, %B$fg[red]%R%b? How about %B$fg[green]%r%b? [%UY%ues|%UN%uo|%UA%ubort|%UE%udit]: "
