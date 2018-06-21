@@ -1,11 +1,24 @@
 #!/usr/bin/env bash
-[[ $3 == "-v" ]] && set -x
-[[ "$UID" == 0 ]] || { echo "User must be root" >&2; exit 1; }
-[[ -a "$1" ]] && disk=$1 || { echo "Must specify disk to mount" >&2; exit 1; }
-[[ "$2" ]] && mtpt=$2 || mtpt=$(mktemp -d)
-[[ $(mount | grep " on $mtpt ") || $(mount | grep "^$mtpt on ") ]] && { echo "$mtpt already mounted" >&2; exit 1; }
-[[ -d "$mtpt" ]] && mntexists=true || mkdir "$mtpt"
 
+# Verbose mode
+[[ $3 == "-v" ]] && set -x
+
+# Check for root user
+[[ "$UID" == 0 ]] || { echo "User must be root" >&2; exit 1; }
+
+# Check that disk or image exists
+[[ -a "$1" ]] && disk=$1 || { echo "Must specify disk to mount" >&2; exit 1; }
+
+# Define mount point or make temp mount point
+[[ "$2" ]] && mtpt=$2 || mtpt=$(mktemp -d)
+
+# Check if mount point is already mounted
+[[ $(mount | grep " on $mtpt ") || $(mount | grep "^$mtpt on ") ]] && { echo "$mtpt already mounted" >&2; exit 1; }
+
+# Make the mount point if it doesn't exist
+[[ -d "$mtpt" ]] && mntexists=true || { mkdir "$mtpt" || exit 1; }
+
+# Do all the mounting
 mount "$disk" "$mtpt" && {
 	mntboot=$(grep boot "$mtpt"/etc/fstab | grep -v '^#' | awk '{print $2}')
 	mount /dev/sda1 "$mtpt/$mntboot"
@@ -13,12 +26,19 @@ mount "$disk" "$mtpt" && {
 	mount -t proc none "$mtpt"/proc
 	mount -t sysfs /sys "$mtpt"/sys
 	mount -o bind /etc/resolv.conf "$mtpt"/etc/resolv.conf
-	chroot "$mtpt" /bin/bash -c 'echo -e "\n\e[1;35m$(lsb_release -a)\e[m"; /bin/bash'
-	for i in "$mtpt"/{"$mntboot",dev,proc,sys,etc/resolv.conf} "$mtpt"; do
+
+	# Do the chroot, print the lsb message, get a bash shell
+	chroot "$mtpt" /usr/bin/env bash -c 'echo -e "\n\e[1;35m$(lsb_release -a)\e[m"; /usr/bin/env bash'
+
+	# Do all the unmounting
+	for i in "$mtpt/"{"$mntboot",dev,proc,sys,etc/resolv.conf} "$mtpt"; do
 		umount $i
 	done
 }
 
+# Delete the temp mount dir
 [[ $mntexists ]] || rmdir "$mtpt"
-echo -e $'\n'"\e[1;36m*****Returning to $(lsb_release -i | cut -f2)*****\e[m"
+
+# Welcome back
+echo -e $'\n'"\e[1;36m*****Returning to $(lsb_release -i | cut -f2)*****\e[m\n"
 
