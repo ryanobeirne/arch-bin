@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 [[ $3 == "-v" ]] && set -x
-[[ "$UID" == 0 ]] || { echo "User must be root"; exit 1; }
-[[ -b "$1" ]] && disk=$1 || { echo "Must specify disk to mount"; exit 1; }
+[[ "$UID" == 0 ]] || { echo "User must be root" >&2; exit 1; }
+[[ -a "$1" ]] && disk=$1 || { echo "Must specify disk to mount" >&2; exit 1; }
 [[ "$2" ]] && mtpt=$2 || mtpt=$(mktemp -d)
-[[ $(mount | grep "$mtpt "\ ) ]] && { echo "$mtpt already mounted"; exit 1; }
+[[ $(mount | grep " on $mtpt ") || $(mount | grep "^$mtpt on ") ]] && { echo "$mtpt already mounted" >&2; exit 1; }
 [[ -d "$mtpt" ]] && mntexists=true || mkdir "$mtpt"
 
 mount "$disk" "$mtpt" && {
 	mntboot=$(grep boot "$mtpt"/etc/fstab | grep -v '^#' | awk '{print $2}')
-	mount /dev/sda1 "$mtpt"/$mntboot
+	mount /dev/sda1 "$mtpt/$mntboot"
 	mount -o bind /dev "$mtpt"/dev
 	mount -t proc none "$mtpt"/proc
 	mount -t sysfs /sys "$mtpt"/sys
 	mount -o bind /etc/resolv.conf "$mtpt"/etc/resolv.conf
-	chroot "$mtpt" /bin/bash -c 'echo -e "\e[1;35m$(lsb_release -a)\e[m"; /bin/bash'
-	for i in "$mtpt"/$mntboot "$mtpt"/dev "$mtpt"/proc "$mtpt"/sys "$mtpt"/etc/resolv.conf "$mtpt"; do
+	chroot "$mtpt" /bin/bash -c 'echo -e "\n\e[1;35m$(lsb_release -a)\e[m"; /bin/bash'
+	for i in "$mtpt"/{"$mntboot",dev,proc,sys,etc/resolv.conf} "$mtpt"; do
 		umount $i
 	done
 }
