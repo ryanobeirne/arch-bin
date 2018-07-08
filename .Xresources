@@ -34,7 +34,7 @@ URxvt*color15: #ECF8FB
 URxvt*font: xft:xos4 Terminus:size=12
 URxvt*metaSendsEscape: true
 
-URxvt*perl-ext-common: default,matcher,tabbed
+URxvt*perl-ext-common: default,matcher,tabbed,selection-to-clipboard
 URxvt.tabbed.tabbar-fg: 6
 URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 8
