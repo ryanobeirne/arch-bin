@@ -9,7 +9,7 @@ URxvt*geometry: 125x45
 !URxvt*transparent: true
 URxvt*depth: 32
 !URxvt*shading: 30
-URxvt*blurRadius: 30
+URxvt*blurRadius: 80
 
 !URxvt*background: #0514218
 URxvt*background: rgba:0505/1414/2121/d998
@@ -33,3 +33,11 @@ URxvt*color15: #ECF8FB
 
 URxvt*font: xft:xos4 Terminus:size=12
 URxvt*metaSendsEscape: true
+
+URxvt*perl-ext-common: default,matcher,tabbed
+URxvt.tabbed.tabbar-fg: 6
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 8
+URxvt.tabbed.tab-bg: 14
+URxvt*url-launcher: /usr/bin/xdg-open
+URxvt*matcher.button: 1
