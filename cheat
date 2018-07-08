@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+[[ "$2" ]] || exit
+lang="$1"
+shift
+args=("$@")
+search=$(echo "${args[@]}" | sed 's/ /+/g')
+curl "https://cheat.sh/$lang/$search"
