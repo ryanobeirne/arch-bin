@@ -3,14 +3,14 @@
 today=($(date '+%m %d %a'))
 this_month=${today[0]}
 this_day=${today[1]}
-daysin_this_month=($(cal | sed 1,2d))
+daysin_this_month=($(cal | sed '1,2d; $d; s/[  ]\{1,\}/\n/g' | grep . | while read i; do printf '%02d\n' "$i"; done))
 
 print_weekdays () {
 	local c
 	for day in "${daysin_this_month[@]}"; do
 		local weekday=$(date -d "$this_month/$day" '+%a' | cut -c1-2 | tr '[:lower:]' '[:upper:]')
 		
-		if [[ "$day" -eq "$this_day" ]]; then
+		if [[ "$day" == "$this_day" ]]; then
 			c='${color0}' c2='${color}'
 		elif [[ "${weekday}" == S* ]]; then
 			c='${color1}' c2='${color}'
@@ -27,13 +27,13 @@ print_daynums () {
 	local c
   for day in "${daysin_this_month[@]}"; do
 
-		if [[ "$day" -eq "$this_day" ]]; then
+		if [[ "$day" == "$this_day" ]]; then
 			c='${color0}' c2='${color}'
 		else
 			unset c c2
 		fi
 
-		printf "${c}%02d${c2}  " "${day}"
+		printf "${c}%s${c2}  " "${day}"
 	done | sed 's/  $//'
 	echo
 }
