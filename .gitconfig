@@ -21,13 +21,17 @@
 	changed = green
 	untracked = cyan
 [alias]
-	a = add
-	c = commit
-	cm = commit -m
-	d = diff
-	df = diff --follow
-	f = fetch
 	l = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit
 	lf = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit --follow
+	d = diff
+	df = diff --follow
+	a = add
 	s = status
-	sp = status --porcelain
+  sp = status --porcelain
+	sm = submodule
+	sma = submodule add
+	c = commit
+  ca = commit --amend
+	cm = commit -m
+	f = fetch
+	pushall = !git remote | xargs -L1 git push --all
