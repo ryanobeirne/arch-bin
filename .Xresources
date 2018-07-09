@@ -11,7 +11,7 @@ URxvt*depth: 32
 !URxvt*shading: 30
 URxvt*blurRadius: 80
 
-!URxvt*background: #0514218
+!URxvt*background: #051421
 URxvt*background: rgba:0505/1414/2121/d998
 URxvt*foreground: #d1f4fa
 URxvt*color0: #0E2C4A
