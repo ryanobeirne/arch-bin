@@ -30,4 +30,4 @@ URxvt.underlineURLs:    true
 URxvt.urlButton:        1
 URxvt*buffered:         false          
 URxvt.urgentOnBell: 	True
-
+URxvt.cursorBlink: True
