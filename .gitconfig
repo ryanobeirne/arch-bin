@@ -25,6 +25,7 @@
 	lf = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit --follow
 	d = diff
 	df = diff --follow
+	dh = diff HEAD^ HEAD
 	a = add
 	s = status
   sp = status --porcelain
