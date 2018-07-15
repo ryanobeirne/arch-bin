@@ -2,7 +2,7 @@
 alias sudo='sudo '
 alias watch='watch '
 alias la='ls -AlhvF --color=auto'
-alias ls='ls -v --color=auto'
+alias ls='ls -Av --color=auto'
 alias cd='cd -P'
 alias pwd='pwd -P'
 alias grep='grep --color=auto'
