@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+[[ $UID = 0 ]] || { echo "User must be root!"; exit 1; }
+
+partition="$1"
+[[ -b "$partition" ]] || { echo "'$partition' is not a block device!" >&2 ; exit 1; }
+
+destination="$2"
+[[ -d "$destination" ]] || { echo "'$destination' is not a directory!" >&2 ; exit 1; }
+
+get_uuid() {
+	local part="$1" uuid
+	for i in /dev/disk/by-uuid/*; do
+		real_path=$(realpath "$i")
+		[[ "$real_path" == "$part" || "$part" == "$i" ]] && uuid="$i" && break
+	done
+	[[ -n "$uuid" ]] && echo "${uuid##*/}" || return 1
+}
+
+dd_cmd() {
+	local part="$1" dest="${2}_$(date +%s).img"
+	echo "'$part' > '$dest'"
+	dd if="$part" of="${dest}" bs=1M status=progress
+	echo
+}
+
+UUID=$(get_uuid "$partition") || exit
+destuuid="$destination/$UUID"
+
+dd_cmd "$partition" "$destuuid"
