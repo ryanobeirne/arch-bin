@@ -15,7 +15,10 @@ export HISTSIZE=20000
 export EDITOR='vim -p'
 export PAGER=vimpager
 export GIT_PAGER='less -IR'
-[[ $(echo $PATH | grep ~/bin) ]] || export PATH=$PATH:~/bin
+paths=(~/bin ~/.cargo/bin)
+for i in "${paths[@]}"; do
+	[[ $(echo $PATH | grep ":$i") ]] || export PATH=$PATH:"$i"
+done
 export LC_ALL=en_US.UTF-8
 # Load colors.
 autoload -U colors
@@ -24,7 +27,7 @@ colors
 setopt PROMPT_SUBST
 
 PROMPT='
-%B┌[%(?.$fg[green].$fg[red])%?$reset_color%B]┤%K{8}%F{magenta} %n%f:%F{6}%~ %f%k│%b $(__GPROMPT)
+%B┌[%(?.$fg[green].$fg[red])%?$reset_color%B]┤%K{8}%F{magenta} %n%f:%F{6}%~ %f%k│%b $(pretty-git-prompt)
 %B└─▶ %#%b '
 
 export SPROMPT="Come on, %B$fg[red]%R%b? How about %B$fg[green]%r%b? [%UY%ues|%UN%uo|%UA%ubort|%UE%udit]: "
