@@ -35,7 +35,7 @@ rnb () {
 		vim -p "src/main.rs" "Cargo.toml"
 }
 precmd () {
-  printf "\e]0;${0##*/} :: TTY[${TTY##*/}] :: $PWD\7"
+  printf "\e]0;TTY[${TTY##*/}] :: ${0##*/} :: $PWD\7"
 }
 #__GPROMPT () {
 	#~/repos/pretty-git-prompt/target/debug/pretty-git-prompt
