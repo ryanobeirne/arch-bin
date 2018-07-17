@@ -5,26 +5,33 @@
 partition="$1"
 [[ -b "$partition" ]] || { echo "'$partition' is not a block device!" >&2 ; exit 1; }
 
-destination="$2"
-[[ -d "$destination" ]] || { echo "'$destination' is not a directory!" >&2 ; exit 1; }
+mounted=$(lsblk -o mountpoint "$partition" | sed 1d)
+[[ -z "$mounted" ]] || { echo "$partition is currently mounted!" >&2 ; exit 1; }
+
+destdir="$2"
+[[ -d "$destdir" ]] || { echo "'$destdir' is not a directory!" >&2 ; exit 1; }
 
 get_uuid() {
 	local part="$1" uuid
-	for i in /dev/disk/by-uuid/*; do
-		real_path=$(realpath "$i")
-		[[ "$real_path" == "$part" || "$part" == "$i" ]] && uuid="$i" && break
-	done
-	[[ -n "$uuid" ]] && echo "${uuid##*/}" || return 1
+	uuid=$(lsblk -o uuid "$part" | sed 1d)
+	[[ -n "$uuid" ]] && echo "${uuid}" || return 1
+}
+
+get_partlabel() {
+	local part="$1" label
+	label=$(lsblk -o label "$part" | sed 1d)
+	[[ -n "$label" ]] && echo "${label// /_}" || return 1
 }
 
 dd_cmd() {
-	local part="$1" dest="${2}_$(date +%s).img"
+	local part="$1" dest="${2}_$(date '+%Y%m%d-%H%M%S').img"
 	echo "'$part' > '$dest'"
-	dd if="$part" of="${dest}" bs=1M status=progress
+	dd if="$part" of=${dest} bs=1M status=progress
 	echo
 }
 
 UUID=$(get_uuid "$partition") || exit
-destuuid="$destination/$UUID"
+PARTLABEL=$(get_partlabel "$partition") || exit
+destination="$destdir/${PARTLABEL:-"NOLABEL"}_${UUID}"
 
-dd_cmd "$partition" "$destuuid"
+dd_cmd "$partition" "$destination"
