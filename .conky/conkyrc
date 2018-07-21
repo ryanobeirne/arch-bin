@@ -57,7 +57,7 @@ ${color1}CPU: ${alignr}${color0}${execi 1000 cat /proc/cpuinfo | grep 'model nam
 ${color1}GPU:
 ${color0}${execi 1000 lspci | grep VGA | sed 's/.*: //; s/^/+ /' | fold -sw 35}
 $hr
-${color1}Battery: ${color}${battery_time} ${alignr}${exec cat /sys/class/power_supply/BAT0/status}
+${color1}BAT0: ${color}${exec cat /sys/class/power_supply/BAT0/status}: ${battery_time} ${alignr}${exec cat /sys/class/power_supply/BAT0/temp | awk '{printf "%d\n", $1/10}'}°C
   $color${battery_percent}% ${battery_bar}
 $hr
 ${color1}RAM Usage:$color $mem/$memmax
