@@ -8,4 +8,12 @@ $(tput setaf $1; tput bold) ███ $(tput sgr0)
 EOF
 }
 
-paste <(pane 0) <(pane 1) <(pane 2) <(pane 3) <(pane 4) <(pane 5) <(pane 6) <(pane 7)
+panefg() {
+	cat <<EOF
+$(tput tput sgr0)███   $(tput sgr0)
+$(tput tput sgr0)███$(tput bold)█ $(tput sgr0)
+$(tput tput sgr0; tput bold) ███ $(tput sgr0)
+EOF
+}
+
+paste <(panefg) <(pane 0) <(pane 1) <(pane 2) <(pane 3) <(pane 4) <(pane 5) <(pane 6) <(pane 7)
