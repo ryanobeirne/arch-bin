@@ -10,6 +10,9 @@ URxvt*scrollbar.width: 16
 URxvt*geometry: 125x45
 URxvt*depth: 32
 URxvt*font: xft:xos4 Terminus:size=12
+URxvt*externalBorder: 0
+URxvt*internalBorder: 0
+URxvt*borderLess: 0
 
 URxvt*perl-ext-common: default,matcher,tabbed,selection-to-clipboard,clipboard,keyboard-select
 URxvt.tabbed.tabbar-fg: 6
