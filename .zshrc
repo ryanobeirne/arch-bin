@@ -4,6 +4,7 @@ sources=(
 	/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
   ~/.aliases
   ~/.functions
+	~/.LESS_TERMCAP
 )
 for s in "${sources[@]}"; do
   [ -r "$s" ] && . "$s"
@@ -13,8 +14,7 @@ export HISTFILE=~/.zsh_history
 export SAVEHIST=10000
 export HISTSIZE=20000
 export EDITOR='vim -p'
-export PAGER=vimpager
-export GIT_PAGER='less -IR'
+export PAGER='less -IR'
 paths=(~/bin ~/.cargo/bin)
 for i in "${paths[@]}"; do
 	[[ $(echo $PATH | grep ":$i") ]] || export PATH=$PATH:"$i"
