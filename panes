@@ -10,9 +10,9 @@ EOF
 
 panefg() {
 	cat <<EOF
-$(tput tput sgr0)███   $(tput sgr0)
-$(tput tput sgr0)███$(tput bold)█ $(tput sgr0)
-$(tput tput sgr0; tput bold) ███ $(tput sgr0)
+$(tput sgr0)███   $(tput sgr0)
+$(tput sgr0)███$(tput bold)█ $(tput sgr0)
+$(tput sgr0; tput bold) ███ $(tput sgr0)
 EOF
 }
 
