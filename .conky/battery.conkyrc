@@ -1,0 +1,44 @@
+conky.config = {
+	alignment = 'bottom_right',
+	background = false,
+	border_width = 0,
+	default_color = '#237ab0',
+	color0 = 'white',
+	color1 = '#97d8f4',
+	default_outline_color = 'white',
+	default_shade_color = 'black',
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_outline = false,
+	draw_shades = true,
+	use_xft = true,
+	font = 'xos4 Terminus:style=bold:size=12',
+	gap_x = 5,
+	gap_y = 0,
+	maximum_width = 210,
+	minimum_height = 5,
+	minimum_width = 200,
+	out_to_console = false,
+	out_to_stderr = false,
+	extra_newline = false,
+	own_window = true,
+	own_window_class = 'Conky',
+	own_window_type = 'dock',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	stippled_borders = 0,
+	update_interval = 10,
+	use_spacer = 'none',
+	show_graph_scale = false,
+	show_graph_range = false,
+	double_buffer = true,
+	text_buffer_size = 512,
+	default_graph_height = 50,
+	uppercase = true
+}
+
+conky.text = [[
+${alignc}${color1}:: BAT0 ${battery} ::${color}
+${execgraph ~/.conky/battery.sh}
+]]
