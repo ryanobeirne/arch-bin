@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/ryanobeirne/bin/xbacklightmon
+Hidden=true
+Name=xbacklightmon
+Type=Application
+X-GNOME-Autostart-enabled=false
