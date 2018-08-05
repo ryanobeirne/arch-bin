@@ -1,0 +1,44 @@
+#!/usr/bin/env zsh
+
+history_file=${1:-$HISTFILE}
+[[ -f "$history_file" ]] || exit 1
+
+parse_hist() {
+  local hist="$1"
+  sed 's/^[        ]\{1,\}//; s/ | /\n/g' "$hist" |
+    awk '{print $1}' |
+    grep . |
+    sort |
+    uniq -c |
+    sort -rn |
+    awk '{printf "%s\t%s\n", $2, $1}' |
+    head -50
+}
+
+grapher() {
+  local input="$1"
+  cat << EOF | gnuplot -p
+set terminal png enhanced background rgb '#C0C0C0' font "Lato,12" fontscale 1.0 size 2048, 1024
+set output "$outgraph"
+unset key
+set title "Top shell commands: '$history_file'"
+set xlabel "Command"
+set ylabel "Count"
+set xtics rotate by -45 left
+set ytics scale 100
+set boxwidth 0.5
+set style fill solid
+plot "$input" using 2:xtic(1) with boxes
+EOF
+}
+
+show_graph() {
+  local data="$1"
+  local outgraph="$(mktemp).png"
+
+  grapher "$data" &&
+    okular --presentation "$outgraph" &>/dev/null &&
+    rm "$outgraph"
+}
+
+show_graph <(parse_hist "$history_file")
