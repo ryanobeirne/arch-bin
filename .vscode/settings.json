@@ -1,0 +1,48 @@
+{
+    "telemetry.enableTelemetry": false,
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#051421",
+        "panel.background": "#051421",
+        "sideBar.background": "#051421D9",
+        "sideBarSectionHeader.background": "#0767B8",
+        "list.hoverBackground": "#003362",
+        "tab.activeBackground": "#051421",
+        "tab.inactiveBackground": "#051421D9",
+        "tab.hoverBackground": "#003362",
+        "titleBar.activeBackground": "#ff0000",
+        "editor.background": "#051421",
+        "editor.lineHighlightBackground": "#0E2C4A",
+        "editor.selectionBackground": "#003362",
+        "editor.findMatchHighlightBackground": "#003362",
+        "terminal.background": "#051421",
+        "badge.background": "#0767B8"
+    },
+    
+    "editor.fontFamily": "Terminus (TTF)",
+    "editor.tabSize": 2,
+    "editor.cursorStyle": "block",
+    "editor.lineNumbers": "relative",
+
+    "vim.leader": "-",
+    "vim.hlsearch": true,
+    "vim.easymotionMarkerBackgroundColor": "#003362",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "-",
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.showHover",
+                    "args": [],
+                }
+            ]
+        }
+    ],
+
+    "terminal.integrated.fontFamily": "DejaVu Sans Mono",
+}
