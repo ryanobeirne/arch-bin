@@ -3,15 +3,17 @@
     "workbench.startupEditor": "none",
     "workbench.colorTheme": "One Dark Pro",
     "workbench.colorCustomizations": {
+        "activityBar.background": "#051421D9",
         "statusBar.background": "#051421",
         "panel.background": "#051421",
         "sideBar.background": "#051421D9",
         "sideBarSectionHeader.background": "#0767B8",
         "list.hoverBackground": "#003362",
+        "list.activeSelectionBackground": "#47A8E4",
+        "list.activeSelectionForeground": "#051421",
         "tab.activeBackground": "#051421",
         "tab.inactiveBackground": "#051421D9",
         "tab.hoverBackground": "#003362",
-        "titleBar.activeBackground": "#ff0000",
         "editor.background": "#051421",
         "editor.lineHighlightBackground": "#0E2C4A",
         "editor.selectionBackground": "#003362",
@@ -45,4 +47,5 @@
     ],
 
     "terminal.integrated.fontFamily": "DejaVu Sans Mono",
+    "git.autofetch": true,
 }
