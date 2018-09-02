@@ -15,11 +15,14 @@ export SAVEHIST=10000
 export HISTSIZE=20000
 export EDITOR='vim -p'
 export PAGER='less -IR'
-paths=(~/bin ~/.cargo/bin)
+export GOPATH=~/go
+export LC_ALL=en_US.UTF-8
+
+paths=(~/bin ~/.cargo/bin /usr/lib/go/bin)
 for i in "${paths[@]}"; do
 	[[ $(echo $PATH | grep ":$i") ]] || export PATH=$PATH:"$i"
 done
-export LC_ALL=en_US.UTF-8
+
 # Load colors.
 autoload -U colors
 colors

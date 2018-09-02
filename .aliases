@@ -28,3 +28,4 @@ alias vim='vim -p'
 alias diff='colordiff'
 alias lb='lsblk -o kname,size,label,partlabel,uuid,partuuid,mountpoint'
 alias tree='tree -C'
+alias :q=exit
