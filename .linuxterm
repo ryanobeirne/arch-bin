@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh
+if [[ $TERM == "linux" ]]; then
+	echo -en "\e]P0051421" #black
+	echo -en "\e]P80E2C4A" #darkgrey
+
+	echo -en "\e]P1F26E63" #darkred
+	echo -en "\e]P9F24D3F" #red
+
+	echo -en "\e]P281DFC0" #darkgreen
+	echo -en "\e]PA33BD90" #green
+
+	echo -en "\e]P3FDF7D0" #brown
+	echo -en "\e]PBFDEC7E" #yellow
+
+	echo -en "\e]P4568CB8" #darkblue
+	echo -en "\e]PC0767B8" #blue
+
+	echo -en "\e]P5C99BC9" #darkmagenta
+	echo -en "\e]PDC852C9" #magenta
+
+	echo -en "\e]P68EC3E4" #darkcyan
+	echo -en "\e]PE47A8E4" #cyan
+
+	echo -en "\e]P7DFE3E5" #lightgrey
+	echo -en "\e]PFECF8FB" #white
+
+	clear #for background artifacting
+fi

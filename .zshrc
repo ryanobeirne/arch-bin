@@ -5,6 +5,7 @@ sources=(
   ~/.aliases
   ~/.functions
 	~/.LESS_TERMCAP
+	~/.linuxterm
 )
 for s in "${sources[@]}"; do
   [ -r "$s" ] && . "$s"
