@@ -36,4 +36,5 @@
   ca = commit --amend
 	cm = commit -m
 	f = fetch
-	pushall = !git remote | xargs -L1 git push --all
+	pushAll = !git remote | xargs -L1 git push --all
+	pushall = !git remote | xargs -L1 git push
