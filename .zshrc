@@ -19,7 +19,7 @@ export PAGER='less -IR'
 export GOPATH=~/go
 export LC_ALL=en_US.UTF-8
 
-paths=(~/bin ~/.cargo/bin /usr/lib/go/bin)
+paths=(~/bin  /usr/lib/go/bin)
 for i in "${paths[@]}"; do
 	[[ $(echo $PATH | grep ":$i") ]] || export PATH=$PATH:"$i"
 done
@@ -41,7 +41,8 @@ bindkey '[3~' delete-char
 bindkey '' beginning-of-line
 bindkey '' end-of-line
 bindkey '' backward-kill-line
-#bindkey '' forward-kill-line
+bindkey '' backward-word
+bindkey '' forward-word
 bindkey '.' insert-last-word
 bindkey 'u' undo
 bindkey ' ' magic-space
