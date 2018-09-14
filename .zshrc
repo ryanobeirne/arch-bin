@@ -46,6 +46,7 @@ bindkey '' forward-word
 bindkey '.' insert-last-word
 bindkey 'u' undo
 bindkey ' ' magic-space
+bindkey ''	vi-cmd-mode
 
 autoload -U compinit && compinit -i
 zmodload -i zsh/complist
