@@ -1,0 +1,36 @@
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set smtp_authenticators = 'gssapi:login'
+set imap_user = "ryanobeirne@gmail.com"
+set imap_check_subscribed=yes
+set smtp_url = "smtps://ryanobeirne@gmail.com@smtp.gmail.com:465"
+source ~/.credentials/mutt-pass.muttrc
+set from = "ryanobeirne@gmail.com"
+set realname = "Ryan O'Beirne"
+set signature = '~/.mutt/signature'
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+[Gmail]/Important"
+set hostname = gmail.com
+set mail_check = 120
+set timeout = 300
+set imap_keepalive = 900
+set postponed="+[Gmail]/Drafts"
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set move = no
+set include
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+set auto_tag = yes
+set pager_index_lines = 10
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+alternative_order text/plain text/html *
+auto_view text/html
+bind editor <Tab> complete-query
+bind editor ^T complete
+bind editor <space> noop
+source ~/.mutt/colorscheme.mutt
