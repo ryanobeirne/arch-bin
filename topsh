@@ -16,9 +16,9 @@ parse_hist() {
 }
 
 grapher() {
-  local input="$1"
+  local input="$1" outgraph="$2"
   cat << EOF | gnuplot -p
-set terminal png enhanced background rgb '#C0C0C0' font "Lato,12" fontscale 1.0 size 2048, 1024
+set terminal png noenhanced background rgb '#C0C0C0' font "Lato,12" fontscale 1.0 size 2048, 1024
 set output "$outgraph"
 unset key
 set title "Top shell commands: '$history_file'"
@@ -36,7 +36,7 @@ show_graph() {
   local data="$1"
   local outgraph="$(mktemp).png"
 
-  grapher "$data" &&
+  grapher "$data" "$outgraph" &&
     okular --presentation "$outgraph" &>/dev/null &&
     rm "$outgraph"
 }
