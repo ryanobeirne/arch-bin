@@ -3,7 +3,7 @@
 today=($(date '+%m %d %a'))
 this_month=${today[0]}
 this_day=${today[1]}
-daysin_this_month=($(cal | sed '1,2d; $d; s/[  ]\{1,\}/\n/g' | grep . | while read i; do printf '%02d\n' "$i"; done))
+daysin_this_month=($(cal | sed '1,2d; s/[  ]\{1,\}/\n/g' | grep . | while read i; do printf '%02d\n' "$i"; done))
 
 print_weekdays () {
 	local c

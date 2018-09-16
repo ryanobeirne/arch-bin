@@ -34,7 +34,7 @@ conky.config = {
 	show_graph_scale = true,
 	show_graph_range = false,
 	double_buffer = true,
-	text_buffer_size = 512
+	text_buffer_size = 1024
 }
 
 conky.text = [[
