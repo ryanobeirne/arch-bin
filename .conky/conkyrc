@@ -65,7 +65,7 @@ ${color1}RAM Usage:$color $mem/$memmax
 ${color1}Swap Usage:$color $swap/$swapmax
   $swapperc% ${swapbar 4}
 $hr
-${color1}CPU: ${color}${cpu}% ${alignc}${freq_g}GHz ${alignr}${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input | awk '{t+=$1} END {printf "%d\n", t/NR/1000}'}°C
+${color1}CPU: ${color}${cpu}% ${alignc}${freq_g}GHz ${alignr}${exec cat /sys/devices/platform/coretemp.*/hwmon/hwmon*/temp*_input | awk '{t+=$1} END {printf "%d\n", t/NR/1000}'}°C
 ${color0}$color0${cpu cpu1}% ${cpubar cpu1 6,70}  \
 ${color0}${alignr 5}$color0${cpu cpu5}% ${cpubar cpu5 6,70}
 ${color0}$color0${cpu cpu2}% ${cpubar cpu2 6,70}  \
