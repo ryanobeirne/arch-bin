@@ -91,7 +91,7 @@ render_timer: false
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: false
+custom_cursor_colors: true
 
 # Colors (Tomorrow Night Bright)
 colors:
@@ -127,16 +127,16 @@ colors:
     cyan:    '0x47a8e4'
     white:   '0xecf8fb'
 
-  # Dim colors (Optional)
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+  ## Dim colors (Optional)
+  #dim:
+    #black:   '0x333333'
+    #red:     '0xf2777a'
+    #green:   '0x99cc99'
+    #yellow:  '0xffcc66'
+    #blue:    '0x6699cc'
+    #magenta: '0xcc99cc'
+    #cyan:    '0x66cccc'
+    #white:   '0xdddddd'
 
 
 # Visual Bell

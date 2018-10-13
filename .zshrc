@@ -1,3 +1,5 @@
+[[ $- != *i* ]] && return
+
 sources=(
   /etc/zsh/zshrc.sh
 	/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -45,15 +47,19 @@ bindkey '' backward-word
 bindkey '' forward-word
 bindkey '.' insert-last-word
 bindkey 'u' undo
-bindkey ' ' magic-space
+bindkey '  ' magic-space
 bindkey ''	vi-cmd-mode
+bindkey '' history-search-backward
 
 autoload -U compinit && compinit -i
 zmodload -i zsh/complist
 setopt correct
 
 # Blur terminal
-if [[ $(ps --no-header -p $PPID -o comm) =~ '^yakuake|alacritty$' ]]; then
-        for wid in $(xdotool search --pid $PPID); do
-            xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
+_ppid=$(ps --no-header -p $PPID -o comm)
+if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt$' ]]; then
+	for wid in $(xdotool search --pid $PPID); do
+			xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid
+	done
 fi
+[[ "$_ppid" =~ '^alacritty|urxvt$' ]] && exec tmux || :

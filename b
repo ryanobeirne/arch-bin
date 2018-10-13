@@ -1,5 +1,6 @@
 #!/bin/zsh
-[ $UID -eq 0 ] || exit 126
+#[ $UID -eq 0 ] || exit 126
+# udev rules allow non-root to edit /sys/class/backlight
 
 for i in /sys/class/backlight/*; do
 	file_brightness="$i/brightness"

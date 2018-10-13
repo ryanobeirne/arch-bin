@@ -34,6 +34,11 @@ rnb () {
 		cd "$1" &&
 		vim -p "src/main.rs" "Cargo.toml"
 }
+rnl () {
+	cargo new --lib "$1" &&
+		cd "$1" &&
+		vim -p "src/lib.rs" "Cargo.toml"
+}
 precmd () {
   printf "\e]0;TTY[${TTY##*/}] :: ${0##*/} :: $PWD\7"
 }

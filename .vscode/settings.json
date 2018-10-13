@@ -23,9 +23,8 @@
     },
     
     "editor.fontFamily": "Terminus (TTF)",
-    "editor.tabSize": 2,
     "editor.cursorStyle": "block",
-    "editor.lineNumbers": "relative",
+    "editor.lineNumbers": "on",
 
     "vim.leader": "-",
     "vim.hlsearch": true,

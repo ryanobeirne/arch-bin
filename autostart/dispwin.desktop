@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=dispwin
-Exec=/usr/bin/dispwin /usr/share/color/icc/ColorLCD-20180131.icc
+Exec=sleep 5; /usr/bin/dispwin /usr/share/color/icc/ColorLCD-20180131.icc
 Type=Application
 X-GNOME-Autostart-enabled=true

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+bat_percent() {
+	awk -v F=$POWER_SUPPLY_CHARGE_FULL -v N=$POWER_SUPPLY_CHARGE_NOW 'BEGIN {
+		printf "%0.0f\n", N/F*100
+	}'
+}
+
+bat_format() {
+	printf '%s: %d%% %s\n' $POWER_SUPPLY_NAME  $(bat_percent) $POWER_SUPPLY_STATUS
+}
+
+bar() {
+	local p=$1 w=${2:-$COLUMNS} s=0
+	local bw=$(( $w - 2 ))
+	printf '['
+	while [[ $s -lt $bw ]]; do
+		printf '#'
+	done
+	printf ']\n'
+}
+
+for battery in /sys/class/power_supply/BAT*; do
+	source "$battery/uevent"
+	bat_format
+	bar $(bat_percent)
+done
