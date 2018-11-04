@@ -33,4 +33,4 @@ auto_view text/html
 bind editor <Tab> complete-query
 bind editor ^T complete
 bind editor <space> noop
-source ~/.mutt/colorscheme.mutt
+source ~/.mutt/colorscheme.muttrc
