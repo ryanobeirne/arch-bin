@@ -31,13 +31,19 @@ say ()
 }
 rnb () {
 	cargo new --bin "$1" &&
-		cd "$1" &&
-		vim -p "src/main.rs" "Cargo.toml"
+		code "$1"
 }
 rnl () {
 	cargo new --lib "$1" &&
-		cd "$1" &&
-		vim -p "src/lib.rs" "Cargo.toml"
+		code "$1"
+}
+rust () {
+	temp=$(mktemp) 
+	rustc -o $temp <(cat <<EOF
+$@
+EOF
+	) && $temp
+	rm $temp
 }
 precmd () {
   printf "\e]0;TTY[${TTY##*/}] :: ${0##*/} :: $PWD\7"
