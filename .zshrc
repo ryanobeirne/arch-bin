@@ -1,11 +1,11 @@
 [[ $- != *i* ]] && return
 
 sources=(
-  /etc/zsh/zshrc.sh
+	/etc/zsh/zshrc.sh
 	/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-  ~/.aliases
-  ~/.functions
+	~/.aliases
+	~/.functions
 	~/.LESS_TERMCAP
 	~/.linuxterm
 )
@@ -16,7 +16,7 @@ done
 export HISTFILE=~/.zsh_history
 export SAVEHIST=10000
 export HISTSIZE=20000
-export EDITOR='vim -p'
+export EDITOR='vim'
 export PAGER='less -IR'
 export GOPATH=~/go
 export LC_ALL=en_US.UTF-8
@@ -57,9 +57,11 @@ setopt correct
 
 # Blur terminal
 _ppid=$(ps --no-header -p $PPID -o comm)
-if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt$' ]]; then
+if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
 	for wid in $(xdotool search --pid $PPID); do
 			xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid
 	done
 fi
+
+# Use tmux if terminal is alacritty or urxvt
 [[ "$_ppid" =~ '^alacritty|urxvt$' ]] && exec tmux || :

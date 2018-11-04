@@ -1,9 +1,0 @@
-[Desktop Entry]
-Comment[en_US]=No description
-Exec=plank
-Hidden=true
-Name[en_US]=Plank
-NoDisplay=false
-Type=Application
-X-GNOME-Autostart-Delay=0
-X-GNOME-Autostart-enabled=true
