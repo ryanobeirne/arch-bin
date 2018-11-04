@@ -46,13 +46,18 @@ file_link() {
 	if [[ -f "$file" ]]; then
 		# Return if the file and link are the same
 		cmp "$file" "$link" &>/dev/null && {
-			printf "\e[1;32m%s\e[m == $link_color%s\e[m\n" "$file" "$link"
+			if [ -x "$file" ]; then
+				file_color='\e[1;32m'
+			else
+				file_color='\e[m'
+			fi
+			printf "$file_color%s\e[m == $link_color%s\e[m\n" "$file" "$link"
 			return 0
 		}
 	else
 		if [[ ! -d "$file" ]]; then
 			# Return if the file does not exist
-			printf "'\e[31m%s': No such file or directory!\e[m\n" "$file" >&2
+			printf "'\e[31m%s\e[m': No such file or directory!\n" "$file" >&2
 			return 1
 		fi
 	fi
