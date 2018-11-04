@@ -15,7 +15,7 @@
         "tab.inactiveBackground": "#051421D9",
         "tab.hoverBackground": "#003362",
         "editor.background": "#051421",
-        "editor.lineHighlightBackground": "#0E2C4A",
+        "editor.lineHighlightBackground": "#0e2c4a80",
         "editor.selectionBackground": "#003362",
         "editor.findMatchHighlightBackground": "#003362",
         "terminal.background": "#051421",
