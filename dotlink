@@ -3,20 +3,10 @@
 # Define dotfiles root directory by this script's location
 dot_root="${0%/*}"
 
-# Check that .dotconfig file exists
-dotconfig="$dot_root/.dotconfig"
-[[ -f "$dotconfig" ]] || {
-	printf '%s\n' "Cannot find .dotconfig!" >&2
-	exit 1
-}
-
 # Ask user for verification before making changes
 areyousure () {
   local message="$1" yn
-  shift
-  local list=("$@")
-  [ "$list" ] && printf '%s\n' ${list[@]}$'\n' >&2
-  printf '\e[1m%s\e[m\n' "$message" >&2
+  printf '\e[1m%b\e[m\n' "$message" >&2
   while [[ -z "$yn" ]]; do
     read -p "Continue? [y/n]: " yn >&2
     case "$yn" in
@@ -27,25 +17,66 @@ areyousure () {
   done
 }
 
-# Link the files
-file_link() {
-	local file="$1" link="$2"
-	
-	# Check that the original file exists
-	[[ -f "$file" ]] || {
-		printf "'%s' does not exist!\n" "$file" >&2
-		return 1
-	}
+areyousure "This script will create links to files in '$dot_root'." || exit
 
-	# Check that the original directory exists and prompt to overwrite
-	[[ -d "$file" ]] && {
-		areyousure "Overwrite '$file'?" || return 1
-	}
-
-	# Link the file
-	ln -si "$file" "$link"
+# Check that .dotconfig file exists
+dotconfig="$dot_root/.dotconfig"
+[[ -f "$dotconfig" ]] || {
+	printf '%s\n' "Cannot find .dotconfig!" >&2
+	exit 1
 }
 
-while read file link; do
-cmp "$dot_root/$file" "$link" || file_link "$file" "$link"
-done < "$dotconfig"
+# Put dotfiles in an array
+dotfiles=($(cat $dotconfig | while read file link; do
+		printf '%s\n' "$dot_root/$file" 
+	done
+))
+
+# Put links in an array
+linkfiles=($(cat $dotconfig | while read file link; do
+		printf '%s\n' "$link"
+	done
+))
+
+# Link the files
+file_link() {
+	local file="$1" link="$2" file_color link_color='\e[1;36m'
+
+	# Check that the original file exists
+	if [[ -f "$file" ]]; then
+		# Return if the file and link are the same
+		cmp "$file" "$link" &>/dev/null && {
+			printf "\e[1;32m%s\e[m == $link_color%s\e[m\n" "$file" "$link"
+			return 0
+		}
+	else
+		if [[ ! -d "$file" ]]; then
+			# Return if the file does not exist
+			printf "'\e[31m%s': No such file or directory!\e[m\n" "$file" >&2
+			return 1
+		fi
+	fi
+
+	# Check if the link exists and prompt to overwrite
+	if [[ -d "$file" && -L "$link" ]]; then
+		file_color='\e[1;36m'
+		areyousure "Overwrite existing link '$link_color$link\e[m'?" || return 1
+	fi
+
+	# Check if the file exists as a directory and prompt to overwrite
+	if [[ -d "$file" && -d "$link" ]]; then
+		file_color='\e[1;34m'
+		areyousure "Overwrite existing directory '$file_color$link\e[m'?" && {
+			mv "$link" "$link~"
+		} || return
+	fi
+
+	# Link the file
+	ln -si "$file" "$link" &&
+		printf "$file_color%s\e[m -> $link_color%s\e[m\n" "$file" "$link"
+}
+
+# Loop through dots and links
+for i in "${!dotfiles[@]}"; do
+	file_link "${dotfiles[$i]}" "${linkfiles[$i]}"
+done
