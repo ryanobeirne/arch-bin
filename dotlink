@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# Define dotfiles root directory by this script's location
+dot_root="${0%/*}"
+
+# Check that .dotconfig file exists
+dotconfig="$dot_root/.dotconfig"
+[[ -f "$dotconfig" ]] || {
+	printf '%s\n' "Cannot find .dotconfig!" >&2
+	exit 1
+}
+
+# Ask user for verification before making changes
+areyousure () {
+  local message="$1" yn
+  shift
+  local list=("$@")
+  [ "$list" ] && printf '%s\n' ${list[@]}$'\n' >&2
+  printf '\e[1m%s\e[m\n' "$message" >&2
+  while [[ -z "$yn" ]]; do
+    read -p "Continue? [y/n]: " yn >&2
+    case "$yn" in
+      Y|y|[Yy][Ee][Ss]) return 0;;
+      N|n|[Nn][Oo]) return 1;;
+      *) unset yn;;
+    esac
+  done
+}
+
+# Link the files
+file_link() {
+	local file="$1" link="$2"
+	
+	# Check that the original file exists
+	[[ -f "$file" ]] || {
+		printf "'%s' does not exist!\n" "$file" >&2
+		return 1
+	}
+
+	# Check that the original directory exists and prompt to overwrite
+	[[ -d "$file" ]] && {
+		areyousure "Overwrite '$file'?" || return 1
+	}
+
+	# Link the file
+	ln -si "$file" "$link"
+}
+
+while read file link; do
+cmp "$dot_root/$file" "$link" || file_link "$file" "$link"
+done < "$dotconfig"
