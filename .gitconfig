@@ -2,23 +2,23 @@
 	email = ryanobeirne@gmail.com
 	name = Ryan O'Beirne
 [core]
-	editor = vim -p
+	editor = vim
 [color]
 	branch = auto
 	diff = auto
 	status = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
+	current = blue reverse
+	local = blue
 	remote = green
 [color "diff"]
-	meta = yellow bold
+	meta = yellow
 	frag = magenta bold
-	old = red bold
-	new = green bold
+	old = red
+	new = green
 [color "status"]
-	added = yellow
-	changed = green
+	added = green
+	changed = yellow
 	untracked = cyan
 [alias]
 	a = add -A
