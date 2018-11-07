@@ -27,7 +27,7 @@ math () {
 
 vimupdate () {
   (
-    cd ~/bin/.vim
+    cd ~/.vim
     git fetch --recurse-submodules && git pull --recurse-submodules
   )
 }
