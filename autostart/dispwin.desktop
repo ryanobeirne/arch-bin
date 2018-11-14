@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=dispwin
 Exec=sleep 5; /usr/bin/dispwin /usr/share/color/icc/ColorLCD-20180131.icc
