@@ -82,7 +82,6 @@ file_link() {
 			mkdir -p "${link%/*}" || return 1
 	fi
 
-
 	# Link the file
 	ln -si "$file" "$link" &&
 		printf "$file_color%s\e[m -> $link_color%s\e[m\n" "$file" "$link"
