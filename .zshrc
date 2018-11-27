@@ -50,6 +50,7 @@ bindkey 'u' undo
 bindkey '  ' magic-space
 bindkey ''	vi-cmd-mode
 bindkey '' history-search-backward
+bindkey '' backward-kill-word
 
 autoload -U compinit && compinit -i
 zmodload -i zsh/complist
@@ -64,4 +65,4 @@ if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
 fi
 
 # Use tmux if terminal is alacritty or urxvt
-[[ "$_ppid" =~ '^alacritty|urxvt$' ]] && exec tmux || :
+[[ "$_ppid" =~ '^alacritty|urxvt$' ]] && { exec tmux attach-session || exec tmux; } || :
