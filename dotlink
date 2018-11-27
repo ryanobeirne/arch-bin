@@ -76,6 +76,13 @@ file_link() {
 		} || return
 	fi
 
+	# Make the parent directory if it doesn't exist
+	if [[ ! -d "${link%/*}" ]]; then
+		areyousure "Create directory '$file_color${link%/*}\e[m'?" &&
+			mkdir -p "${link%/*}" || return 1
+	fi
+
+
 	# Link the file
 	ln -si "$file" "$link" &&
 		printf "$file_color%s\e[m -> $link_color%s\e[m\n" "$file" "$link"
