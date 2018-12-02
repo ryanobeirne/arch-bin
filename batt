@@ -1,27 +1,64 @@
 #!/usr/bin/env bash
 
+# Returns percentage rounded to nearest integer
 bat_percent() {
-	awk -v F=$POWER_SUPPLY_CHARGE_FULL -v N=$POWER_SUPPLY_CHARGE_NOW 'BEGIN {
+	local full="$1" now="$2"
+	awk -v F=$full -v N=$now 'BEGIN {
 		printf "%0.0f\n", N/F*100
 	}'
 }
 
-bat_format() {
-	printf '%s: %d%% %s\n' $POWER_SUPPLY_NAME  $(bat_percent) $POWER_SUPPLY_STATUS
-}
+# Returns a TUI bar of a given width [#####-----]
+print_bar() {
+	local p=$1 width=${2:-$(tput cols 2>/dev/null || 80)} s=0
+	local bar_width=$(( $width - 2 ))
 
-bar() {
-	local p=$1 w=${2:-$COLUMNS} s=0
-	local bw=$(( $w - 2 ))
+	local hash_width=$(awk -v P=$p -v BW=$bar_width 'BEGIN {
+		printf "%0.0f", P / 100 * BW
+	}')
+
 	printf '['
-	while [[ $s -lt $bw ]]; do
-		printf '#'
+
+	while [[ $s -lt $bar_width ]]; do
+		[[ $s -lt $hash_width ]] && printf '#' || printf '-'
+		let s+=1
 	done
+
 	printf ']\n'
 }
 
-for battery in /sys/class/power_supply/BAT*; do
+# Returns a big TUI bar of a given width
+# [#####-----]
+# [#####-----]]
+# [#####-----]
+big_bar() {
+	local bar="$1"
+	for line in {1..5}; do
+		printf '%s' "$bar"
+		[[ "$line" -eq 3 ]] && printf ']\n' || printf '\n'
+	done
+}
+
+# Pretty prints battery name, percentage, and status
+# BAT0: 29% Charging
+print_batt() {
+	local name="$1" percent="$2" status="$3"
+	printf '%s: %d%% %s\n' "$name" "$percent" "$status"
+}
+
+# Main function for a given battery at /sys/class/power_supply/
+main() {
+	local battery="$1"
 	source "$battery/uevent"
-	bat_format
-	bar $(bat_percent)
+	local percent=$(bat_percent "$POWER_SUPPLY_CHARGE_FULL" "$POWER_SUPPLY_CHARGE_NOW")
+	print_batt "$POWER_SUPPLY_NAME" "$percent" "$POWER_SUPPLY_STATUS"
+	print_bar "$percent" #102
+	#bar=$(print_bar "$percent" 22)
+	#big_bar "$bar"
+}
+
+
+
+for battery in /sys/class/power_supply/BAT*; do
+	main "$battery"
 done
