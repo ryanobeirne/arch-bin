@@ -21,9 +21,9 @@ export PAGER='less -IR'
 export GOPATH=~/go
 export LC_ALL=en_US.UTF-8
 
-paths=(~/bin  /usr/lib/go/bin)
-for i in "${paths[@]}"; do
-	[[ $(echo $PATH | grep ":$i") ]] || export PATH=$PATH:"$i"
+mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin)
+for p in "${mypaths[@]}"; do
+	appendpath "$p"
 done
 
 # Load colors.
@@ -41,15 +41,18 @@ export SPROMPT="Come on, %B$fg[red]%R%b? How about %B$fg[green]%r%b? [%UY%ues|%U
 # Key bindings
 bindkey '[3~' delete-char
 bindkey '' beginning-of-line
+bindkey '[1~]' beginning-of-line
 bindkey '' end-of-line
+bindkey '[4~]' end-of-line
 bindkey '' backward-kill-line
+bindkey '' kill-line
 bindkey '' backward-word
 bindkey '' forward-word
 bindkey '.' insert-last-word
 bindkey 'u' undo
 bindkey '  ' magic-space
 bindkey ''	vi-cmd-mode
-bindkey '' history-search-backward
+#bindkey '' history-search-backward
 bindkey '' backward-kill-word
 
 autoload -U compinit && compinit -i
@@ -65,4 +68,4 @@ if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
 fi
 
 # Use tmux if terminal is alacritty or urxvt
-[[ "$_ppid" =~ '^alacritty|urxvt$' ]] && { exec tmux attach-session || exec tmux; } || :
+[[ "$_ppid" =~ '^alacritty|urxvt$' ]] && exec tmux || :
