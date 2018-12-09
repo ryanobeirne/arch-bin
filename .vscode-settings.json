@@ -1,5 +1,6 @@
 {
     "telemetry.enableTelemetry": false,
+    "window.titleBarStyle": "native",
     "workbench.startupEditor": "none",
     "workbench.colorTheme": "One Dark Pro",
     "workbench.colorCustomizations": {
