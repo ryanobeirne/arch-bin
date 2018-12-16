@@ -28,7 +28,7 @@ alias dirty='GIT_PS1_SHOWDIRTYSTATE=true'
 alias dmesg='dmesg --color=always | less -IR'
 alias journalctl='PAGER="less -IR" journalctl'
 alias diff='colordiff'
-alias lb='lsblk -o kname,size,fstype,label,uuid,partlabel,partuuid,mountpoint'
+alias lb='lsblk -o name,size,fstype,label,uuid,partlabel,partuuid,mountpoint'
 alias tree='tree -C'
 alias :q=exit
 alias qu='yay -Sy && yay -Qu'
