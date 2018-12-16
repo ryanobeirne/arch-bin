@@ -294,10 +294,10 @@ key_bindings:
   - { key: C,        mods: Control|Shift, action: Copy                   }
   - { key: Q,        mods: Control|Shift, action: Quit                   }
   - { key: W,        mods: Control|Shift, action: Quit                   }
-  - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
-  - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
-  - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
-  - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
+  - { key: Home,                    chars: "[1~]",   mode: AppCursor   }
+  - { key: Home,                    chars: "[1~]",   mode: ~AppCursor  }
+  - { key: End,                     chars: "[4~]",   mode: AppCursor   }
+  - { key: End,                     chars: "[4~]",   mode: ~AppCursor  }
   - { key: Key0,     mods: Command, action: ResetFontSize                }
   - { key: Equals,   mods: Command, action: IncreaseFontSize             }
   - { key: Minus,    mods: Command, action: DecreaseFontSize             }
