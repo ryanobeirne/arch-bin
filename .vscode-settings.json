@@ -19,7 +19,28 @@
         "editor.lineHighlightBackground": "#0e2c4a80",
         "editor.selectionBackground": "#003362",
         "editor.findMatchHighlightBackground": "#003362",
+
         "terminal.background": "#051421",
+        "terminal.foreground": "#d1f4fa",
+
+		"terminal.ansiBlack": "#0e2c4a",
+		"terminal.ansiRed": "#f26e63",
+		"terminal.ansiGreen": "#81dfc0",
+		"terminal.ansiYellow": "#fdf7d0",
+		"terminal.ansiBlue": "#568cb8",
+		"terminal.ansiMagenta": "#c99bc9",
+		"terminal.ansiCyan": "#8ec3e4",
+        "terminal.ansiWhite": "#dfe3e5",
+
+		"terminal.ansiBrightBlack": "#003362",
+		"terminal.ansiBrightRed": "#f24d3f",
+		"terminal.ansiBrightGreen": "#33bd90",
+		"terminal.ansiBrightYellow": "#fdec7e",
+		"terminal.ansiBrightBlue": "#0767b8",
+		"terminal.ansiBrightMagenta": "#c852c9",
+		"terminal.ansiBrightCyan": "#47a8e4",
+        "terminal.ansiBrightWhite": "#ecf8fb",
+
         "badge.background": "#0767B8"
     },
     
