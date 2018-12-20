@@ -68,6 +68,7 @@
     ],
 
     "terminal.integrated.fontFamily": "DejaVu Sans Mono",
+    "terminal.integrated.scrollback": 10000,
     "git.autofetch": true,
     "terminal.integrated.rendererType": "dom",
 }
