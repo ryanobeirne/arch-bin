@@ -1,27 +1,4 @@
 #Ignore everything
 *
 
-#Add these files
-!/.LESS_TERMCAP
-!/.Xresources
-!/.aliases
-!/.bashrc
-!/.config/Code/User/settings.json
-!/.config/alacritty/alacritty.yml
-!/.config/compton.conf
-!/.config/libinput-gestures.conf
-!/.config/pretty-git-prompt.yml
-!/.config/ranger/rc.conf
-!/.conky
-!/.functions
-!/.gitconfig
-!/.gitignore
-!/.linuxterm
-!/.mutt/colorscheme.muttrc
-!/.muttrc
-!/.tmux.conf
-!/.urxvt
-!/.xrdb
-!/.zshrc
-!/bin
-!/bin/*
+#If you want to add something, use `git add -f <something>`

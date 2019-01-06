@@ -1,0 +1,20 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=sleep 3; /usr/bin/dispwin /usr/share/color/icc/ColorLCD-20180131.icc
+GenericName[en_US]=
+GenericName=
+MimeType=
+Name[en_US]=dispwin
+Name=dispwin
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-GNOME-Autostart-enabled=true
+X-KDE-RunOnDiscreteGpu=false
+X-KDE-SubstituteUID=false
+X-KDE-Username=
