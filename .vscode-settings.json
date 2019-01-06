@@ -1,5 +1,7 @@
 {
+    "rust.rustfmt_path": "/home/ryanobeirne/.cargo/bin/rustfmt",
     "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
     "window.titleBarStyle": "native",
     "workbench.startupEditor": "none",
     "workbench.colorTheme": "One Dark Pro",
@@ -66,9 +68,14 @@
             ]
         }
     ],
-
-    "terminal.integrated.fontFamily": "DejaVu Sans Mono",
     "terminal.integrated.scrollback": 10000,
+    // "terminal.integrated.fontFamily": "Terminus (TTF)",
     "git.autofetch": true,
     "terminal.integrated.rendererType": "dom",
+    "workbench.editor.showTabs": true,
+    "explorer.confirmDelete": false,
+    "update.enableWindowsBackgroundUpdates": false,
+    "update.showReleaseNotes": false,
+    "terminal.integrated.fontFamily": "monospace",
+    "update.channel": "none",
 }
