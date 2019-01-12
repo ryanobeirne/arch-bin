@@ -1,0 +1,81 @@
+{
+    "rust.rustfmt_path": "/home/ryanobeirne/.cargo/bin/rustfmt",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "window.titleBarStyle": "native",
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#051421D9",
+        "statusBar.background": "#051421",
+        "panel.background": "#051421",
+        "sideBar.background": "#051421D9",
+        "sideBarSectionHeader.background": "#0767B8",
+        "list.hoverBackground": "#003362",
+        "list.activeSelectionBackground": "#47A8E4",
+        "list.activeSelectionForeground": "#051421",
+        "tab.activeBackground": "#051421",
+        "tab.inactiveBackground": "#051421D9",
+        "tab.hoverBackground": "#003362",
+        "editor.background": "#051421",
+        "editor.lineHighlightBackground": "#0e2c4a80",
+        "editor.selectionBackground": "#003362",
+        "editor.findMatchHighlightBackground": "#003362",
+
+        "terminal.background": "#051421",
+        "terminal.foreground": "#d1f4fa",
+
+		"terminal.ansiBlack": "#0e2c4a",
+		"terminal.ansiRed": "#f26e63",
+		"terminal.ansiGreen": "#81dfc0",
+		"terminal.ansiYellow": "#fdf7d0",
+		"terminal.ansiBlue": "#568cb8",
+		"terminal.ansiMagenta": "#c99bc9",
+		"terminal.ansiCyan": "#8ec3e4",
+        "terminal.ansiWhite": "#dfe3e5",
+
+		"terminal.ansiBrightBlack": "#003362",
+		"terminal.ansiBrightRed": "#f24d3f",
+		"terminal.ansiBrightGreen": "#33bd90",
+		"terminal.ansiBrightYellow": "#fdec7e",
+		"terminal.ansiBrightBlue": "#0767b8",
+		"terminal.ansiBrightMagenta": "#c852c9",
+		"terminal.ansiBrightCyan": "#47a8e4",
+        "terminal.ansiBrightWhite": "#ecf8fb",
+
+        "badge.background": "#0767B8"
+    },
+    
+    "editor.fontFamily": "Terminus (TTF)",
+    "editor.cursorStyle": "block",
+    "editor.lineNumbers": "on",
+
+    "vim.leader": "-",
+    "vim.hlsearch": true,
+    "vim.easymotionMarkerBackgroundColor": "#003362",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "-",
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.showHover",
+                    "args": [],
+                }
+            ]
+        }
+    ],
+    "terminal.integrated.scrollback": 10000,
+    // "terminal.integrated.fontFamily": "Terminus (TTF)",
+    "git.autofetch": true,
+    "terminal.integrated.rendererType": "dom",
+    "workbench.editor.showTabs": true,
+    "explorer.confirmDelete": false,
+    "update.enableWindowsBackgroundUpdates": false,
+    "update.showReleaseNotes": false,
+    "terminal.integrated.fontFamily": "monospace",
+    "update.channel": "none",
+}
