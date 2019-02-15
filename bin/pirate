@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# setup options
+## use integers as options
+for n in "$@"; do
+	[ $(printf '%s\n' "$n" | grep '^-[0-9]\{1,\}$') ] && head_number="${n#-}"
+done
+## other options
+while getopts ":d:n:p0123456789" opt; do
+	# printf '%s\t\t%s\t\t%s\n' "Option Index: $OPTIND" "Opt: $opt" "Argument: $OPTARG"
+	[ $(echo "$opt" | grep '[0-9]') ] || case "$opt" in
+		d) downloading=true; download_path="$OPTARG";;
+		n) head_number=$OPTARG;;
+		p) printing=true;;
+		\?) echo "Invalid option: -$OPTARG. Use -h for help." >&2; exit 1;;
+		:) echo "Option -$OPTARG requires an argument. Use -h for help." >&2; exit 1;;
+	esac
+done
+
+# set default of 1 or use $head_number
+head_number=${head_number:-1}
+# check that it's a number
+if [[ $(echo $head_number | grep -v [0-9]) ]]; then
+	echo "OPTARG -n must be a number!" >&2
+	exit 1
+fi
+
+# check for out of place arguments
+shift "$((OPTIND-1))"
+for arg in "$@"; do
+  if [[ $(echo $arg | grep ^-) ]]; then
+    echo "Place $arg before arguments. Use -h for help." >&2
+    exit 1
+  fi
+done
+
+function searcher {
+	OIFS="$IFS"
+	local IFS="
+	"
+	local term="$1"
+	enc_term=$(node -p "encodeURI('${term}')")
+  top_result=("$(curl -s "https://thepiratebay.org/search/${enc_term}" |
+    sed -n '/<a href=\"magnet/p' |
+    cut -d \" -f2 |
+    head -$head_number)")
+  if [[ $top_result ]]; then
+    echo "Found: $term"
+		if [[ $downloading ]]; then
+			echo "Downloading: $term"
+			echo "${top_result[@]}" >> "$download_path/$term.torrent" # still working on this
+		else
+			for result in $top_result; do
+				xdg-open "$result"
+			done
+		fi
+		[ $printing ] && echo "${top_result[@]}"
+  else
+    echo "Not Found: '$term'"
+  fi
+}
+
+for arg in "$@"; do
+  searcher "$arg" &
+done
+
+wait
+
+exit 0
