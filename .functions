@@ -55,7 +55,7 @@ EOF
 }
 
 precmd () {
-  printf "\e]0;TTY[${TTY##*/}] :: ${0##*/} :: $PWD\7"
+  printf "\e]0;${0##*/}::${TTY}\7"
 }
 
 #__GPROMPT () {
