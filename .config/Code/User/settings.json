@@ -78,4 +78,6 @@
     "update.showReleaseNotes": false,
     "terminal.integrated.fontFamily": "monospace",
     "update.channel": "none",
+    "editor.renderWhitespace": "all",
+    "editor.lineHeight": 16,
 }
