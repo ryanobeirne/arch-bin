@@ -1,6 +1,7 @@
 [user]
 	email = ryanobeirne@gmail.com
 	name = Ryan O'Beirne
+	signingkey = ryanobeirne@gmail.com
 [core]
 	editor = vim
 [color]
@@ -21,7 +22,7 @@
 	changed = yellow
 	untracked = cyan
 [alias]
-	a = add -A
+	A = add -A
 	c = commit
 	ca = commit --amend
 	cm = commit -m
