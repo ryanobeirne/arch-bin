@@ -19,7 +19,9 @@ _status () {
 }
 
 export GIT_PS1_SHOWDIRTYSTATE=true
-export PS1="\[\e[0m\]\n\[\e[1;32m\]┌\$(_status)\[\e[32m\]┤\[\e[40;35m\] \u:\[\e[36m\]\w \[\e[0;1;32m\]│\[\e[m\]\[\e[37m\]\$(__git_ps1)\[\e[m\]\n\[\e[1;32m\]└─▶\[\e[0m\] \\$ "
+export PS1="\[\e[0m\]
+\[\e[1;32m\]┌\$(_status)\[\e[32m\]┤\[\e[40;35m\] \u:\[\e[36m\]\w \[\e[0;1;32m\]│\[\e[m\]\[\e[37m\]\$(__git_ps1)\[\e[m\]
+\[\e[1;32m\]└─▶\[\e[0m\] \\$ "
 export EDITOR='vim -p'
 export PAGER=vimpager
 export GIT_PAGER=less

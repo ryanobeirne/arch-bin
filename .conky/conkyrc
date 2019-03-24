@@ -77,11 +77,11 @@ ${color0}${alignr 5}$color0${cpu cpu8}% ${cpubar cpu8 6,70}
 $cpugraph
 $hr
 ${color1}File systems:
-${color2}root: ${color}${fs_used /}/${fs_size /}
+${color2}root: ${color}${fs_used /}/${fs_size /}: ${fs_free /} free
   ${fs_used_perc /}% ${fs_bar 6 /}
-${color2}home: ${color}${fs_used /home}/${fs_size /home}
+${color2}home: ${color}${fs_used /home}/${fs_size /home}: ${fs_free /home} free
   ${fs_used_perc /home}% ${fs_bar 6 /home}
-${color2} ESP: $color${fs_used /boot/efi}/${fs_size /boot/efi}
+${color2} ESP: $color${fs_used /boot/efi}/${fs_size /boot/efi}: ${fs_free /boot/efi} free
   ${fs_used_perc /boot/efi}% ${fs_bar 6 /boot/efi}
 $hr
 ${color1}WiFi: ${color}${wireless_essid wlp3s0} ${color1}|${color} ${addr wlp3s0}

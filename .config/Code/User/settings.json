@@ -1,5 +1,6 @@
 {
     "rust.rustfmt_path": "/home/ryanobeirne/.cargo/bin/rustfmt",
+    "rust-client.channel": "stable",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "window.titleBarStyle": "native",

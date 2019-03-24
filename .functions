@@ -33,7 +33,7 @@ vimupdate () {
 }
 
 say () { 
-	espeak -v english-us "$@" 2> /dev/null
+	espeak -v english-us "$*" 2> /dev/null
 }
 
 rnb () {
