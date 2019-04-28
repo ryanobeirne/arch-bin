@@ -37,7 +37,7 @@ window:
 
 
   # When true, alacritty starts maximized.
-  start_maximized: false
+  startup_mode: Maximized
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
