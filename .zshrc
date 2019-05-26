@@ -17,9 +17,10 @@ export HISTFILE=~/.zsh_history
 export SAVEHIST=10000
 export HISTSIZE=20000
 export EDITOR='vim'
-export PAGER='less -IR'
+export PAGER='less -iR'
 export GOPATH=~/go
 export LC_ALL=en_US.UTF-8
+export HOSTALIASES=~/.config/hosts
 
 mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin)
 for p in "${mypaths[@]}"; do
@@ -52,8 +53,9 @@ bindkey '.' insert-last-word
 bindkey 'u' undo
 bindkey '  ' magic-space
 bindkey ''	vi-cmd-mode
-#bindkey '' history-search-backward
-bindkey '' backward-kill-word
+bindkey '' history-incremental-search-backward
+bindkey '' backward-kill-word
+bindkey '' backward-delete-char
 
 autoload -U compinit && compinit -i
 zmodload -i zsh/complist
@@ -68,4 +70,4 @@ if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
 fi
 
 # Use tmux if terminal is alacritty or urxvt
-[[ "$_ppid" =~ '^alacritty|urxvt$' ]] && exec tmux || :
+[[ "$_ppid" =~ '^alacritty|urxvt|vim$' ]] && exec tmux || :

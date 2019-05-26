@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment[en_US]=
 Comment=
-Exec=sleep 3; /usr/bin/dispwin /usr/share/color/icc/ColorLCD-20180131.icc
+Exec=sleep 3; /usr/bin/dispwin ~/.color/icc/ColorLCD-20180131.icc
 GenericName[en_US]=
 GenericName=
 MimeType=
