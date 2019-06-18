@@ -79,8 +79,8 @@ $hr
 ${color1}File systems:
 ${color2}root: ${color}${fs_used /}/${fs_size /}: ${fs_free /} free
   ${fs_used_perc /}% $color1${fs_bar 6 /}
-#${color2}home: ${color}${fs_used /home}/${fs_size /home}: ${fs_free /home} free
-  #${fs_used_perc /home}% $color1${fs_bar 6 /home}
+${color2}home: ${color}${fs_used /home}/${fs_size /home}: ${fs_free /home} free
+  ${fs_used_perc /home}% $color1${fs_bar 6 /home}
 ${color2} ESP: $color${fs_used /boot/efi}/${fs_size /boot/efi}: ${fs_free /boot/efi} free
   ${fs_used_perc /boot/efi}% $color1${fs_bar 6 /boot/efi}
 $hr
