@@ -9,7 +9,7 @@ URxvt*scrollWithBuffer: true
 URxvt*scrollbar.width: 16
 URxvt*geometry: 125x45
 URxvt*depth: 32
-URxvt*font: xft:xos4 Terminus:size=12
+URxvt*font: xft:xos4 Terminus:size=14
 URxvt*externalBorder: 0
 URxvt*internalBorder: 0
 URxvt*borderLess: 0
