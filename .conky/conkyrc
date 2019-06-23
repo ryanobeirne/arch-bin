@@ -18,7 +18,7 @@ conky.config = {
 	use_xft = true,
 	font = 'xos4 Terminus:size=11',
 	gap_x = 5,
-	gap_y = 80,
+	gap_y = 40,
 	maximum_width = 300,
 	minimum_height = 5,
 	minimum_width = 5,
@@ -57,7 +57,7 @@ ${color1}CPU: ${alignr}${color0}${execi 1000 cat /proc/cpuinfo | grep 'model nam
 ${color1}GPU:
 ${color0}${execi 1000 lspci | grep VGA | sed 's/.*: //; s/^/+ /' | fold -sw 35}
 $hr
-${color1}BAT0: ${color}${exec cat /sys/class/power_supply/BAT0/status}: ${battery_time} ${alignr}${exec cat /sys/class/power_supply/BAT0/temp | awk '{printf "%d\n", $1/10}'}°C
+${color1}BAT0: ${color}${exec cat /sys/class/power_supply/BAT0/status}: ${battery_time}
   $color${battery_percent}% $color1${battery_bar}
 $hr
 ${color1}RAM Usage:$color $mem/$memmax
@@ -65,22 +65,24 @@ ${color1}RAM Usage:$color $mem/$memmax
 ${color1}Swap Usage:$color $swap/$swapmax
   $swapperc% $color1${swapbar 4}
 $hr
-${color1}CPU: ${color}${cpu}% ${alignc}${freq_g}GHz ${alignr}${exec cat /sys/devices/platform/coretemp.*/hwmon/hwmon*/temp*_input | awk '{t+=$1} END {printf "%d\n", t/NR/1000}'}°C
-${color0}${cpu cpu1}% $color1${cpubar cpu1 6,70}  \
-${color0}${alignr 5}${cpu cpu5}% $color1${cpubar cpu5 6,70}
-${color0}${cpu cpu2}% $color1${cpubar cpu2 6,70}  \
-${color0}${alignr 5}${cpu cpu6}% $color1${cpubar cpu6 6,70}
-${color0}${cpu cpu3}% $color1${cpubar cpu3 6,70}  \
-${color0}${alignr 5}${cpu cpu7}% $color1${cpubar cpu7 6,70}
-${color0}${cpu cpu4}% $color1${cpubar cpu4 6,70}  \
-${color0}${alignr 5}${cpu cpu8}% $color1${cpubar cpu8 6,70}
+${color1}CPU: ${color}${cpu}% ${alignc}${freq_g}GHz ${alignr}${exec awk '{printf "%0.0f", $1 / 1000}' /sys/class/hwmon/hwmon0/temp1_input}°C
+${color0}${cpu cpu1}% $color1${cpubar cpu1 6,105}  \
+${color0}${alignr 5}${cpu cpu5}% $color1${cpubar cpu5 6,105}
+${color0}${cpu cpu2}% $color1${cpubar cpu2 6,105}  \
+${color0}${alignr 5}${cpu cpu6}% $color1${cpubar cpu6 6,105}
+${color0}${cpu cpu3}% $color1${cpubar cpu3 6,105}  \
+${color0}${alignr 5}${cpu cpu7}% $color1${cpubar cpu7 6,105}
+${color0}${cpu cpu4}% $color1${cpubar cpu4 6,105}  \
+${color0}${alignr 5}${cpu cpu8}% $color1${cpubar cpu8 6,105}
 ${color0}${cpugraph 40,295 022B41 97d8f4 -t}
 $hr
 ${color1}File systems:
 ${color2}root: ${color}${fs_used /}/${fs_size /}: ${fs_free /} free
   ${fs_used_perc /}% $color1${fs_bar 6 /}
+${diskiograph_read /dev/nvme0n1p2 25,145 022B41 97d8f4 -t} ${diskiograph_write /dev/nvme0n1p2 25,145 022B41 97d8f4 -t}
 ${color2}home: ${color}${fs_used /home}/${fs_size /home}: ${fs_free /home} free
   ${fs_used_perc /home}% $color1${fs_bar 6 /home}
+${diskiograph_read /dev/sda1 25,145 022B41 97d8f4 -t} ${diskiograph_write /dev/sda1 25,145 022B41 97d8f4 -t}
 ${color2} ESP: $color${fs_used /boot/efi}/${fs_size /boot/efi}: ${fs_free /boot/efi} free
   ${fs_used_perc /boot/efi}% $color1${fs_bar 6 /boot/efi}
 $hr
@@ -89,7 +91,7 @@ ${color1}Up:$color ${upspeed wlp3s0} ${alignr}${color1}Down:$color ${downspeed w
 ${upspeedgraph wlp3s0 25,145 022B41 97d8f4 -t} ${downspeedgraph wlp3s0 25,145 022B41 97d8f4 -t}
 ${color1}Ethernet: ${color}${addr enp4s0}
 ${color1}Up:$color ${upspeed enp4s0} ${alignr}${color1}Down:$color ${downspeed enp4s0}
-${upspeedgraph enp2s0f0 25,145 022B41 97d8f4 -t} ${downspeedgraph enp2s0f0 25,145 022B41 97d8f4 -t}
+${upspeedgraph enp4s0 25,145 022B41 97d8f4 -t} ${downspeedgraph enp4s0 25,145 022B41 97d8f4 -t}
 $hr
 ${color1}Processes:$color $processes  ${color1}Running:$color $running_processes
 ${color}Name              PID   CPU%   MEM%
