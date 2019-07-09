@@ -33,8 +33,12 @@ colors
 # Allow for functions in the prompt.
 setopt PROMPT_SUBST
 
+__GIT_PROMPT() {
+	which pretty-git-prompt &>/dev/null && pretty-git-prompt || printf '(git?)'
+}
+
 PROMPT='
-%B┌[%(?.$fg[green].$fg[red])%?$reset_color%B]┤%K{8}%F{magenta} %n%f:%F{6}%~ %f%k│%b $(pretty-git-prompt)
+%B┌[%(?.$fg[green].$fg[red])%?$reset_color%B]┤%K{8}%F{magenta} %n%f:%F{6}%~ %f%k│%b $(__GIT_PROMPT)
 %B└─▶ %#%b '
 
 export SPROMPT="Come on, %B$fg[red]%R%b? How about %B$fg[green]%r%b? [%UY%ues|%UN%uo|%UA%ubort|%UE%udit]: "
@@ -70,4 +74,4 @@ if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
 fi
 
 # Use tmux if terminal is alacritty or urxvt
-[[ "$_ppid" =~ '^alacritty|urxvt|vim$' ]] && exec tmux || :
+[[ "$_ppid" =~ '^login|alacritty|urxvt|vim$' ]] && exec tmux || :

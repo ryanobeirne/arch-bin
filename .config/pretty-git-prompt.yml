@@ -86,7 +86,7 @@ values:
       post_format: '%{%f%}'
       # the number of tracked files which were changed in working tree
     - type: changed
-      pre_format: '%{%B%F{red}%}▲'
+      pre_format: '%{%B%F{yellow}%}▲'
       post_format: '%{%b%f%}'
       # the number of files added to index
     - type: staged
@@ -94,7 +94,7 @@ values:
       post_format: '%{%f%}'
       # during merge, rebase, or others, the numbers files which conflict
     - type: conflicts
-      pre_format: '%{%F{yellow}%}✘'
+      pre_format: '%{%F{red}%}✘'
       post_format: '%{%f%}'
     - type: separator
       display: surrounded

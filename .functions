@@ -1,12 +1,4 @@
 #!/bin/bash
-gitlog () {
-  git log $@ | vimpager
-}
-
-gitdiff () {
-  git diff $@ | vimpager
-}
-
 lass () {
 	ls -alhv --color=always $@ | less -IR
 }

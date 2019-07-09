@@ -82,4 +82,5 @@
     "update.showReleaseNotes": false,
     "terminal.integrated.fontFamily": "monospace",
     "update.mode": "none",
+    "C_Cpp.updateChannel": "Insiders",
 }
