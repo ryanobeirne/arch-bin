@@ -73,5 +73,13 @@ if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
 	done
 fi
 
-# Use tmux if terminal is alacritty or urxvt
-[[ "$_ppid" =~ '^login|alacritty|urxvt|vim$' ]] && exec tmux || :
+ask_tmux() {
+	printf 'Start tmux? [y/n]: '
+	read -rsqk1 && exec tmux || clear
+}
+
+# Use tmux if terminal is alacritty, urxvt, vim. Ask if login shell.
+case "$_ppid" in
+	alacritty|urxvt|vim) exec tmux;;
+	login) ask_tmux;;
+esac
