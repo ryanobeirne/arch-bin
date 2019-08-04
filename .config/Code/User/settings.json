@@ -47,12 +47,12 @@
         "badge.background": "#0767B8"
     },
     
-    "editor.fontFamily": "Terminus (TTF)",
+    "editor.fontFamily": "SauceCodePro Nerd Font Mono",
     "editor.fontSize": 18,
     "editor.cursorStyle": "block",
     "editor.lineNumbers": "on",
     "editor.renderWhitespace": "all",
-    "editor.lineHeight": 20,
+    "editor.lineHeight": 22,
 
     "vim.leader": "-",
     "vim.hlsearch": true,
@@ -73,14 +73,12 @@
         }
     ],
     "terminal.integrated.scrollback": 10000,
-    // "terminal.integrated.fontFamily": "Terminus (TTF)",
     "git.autofetch": true,
     "terminal.integrated.rendererType": "dom",
     "workbench.editor.showTabs": true,
     "explorer.confirmDelete": false,
-    "update.enableWindowsBackgroundUpdates": false,
     "update.showReleaseNotes": false,
-    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontFamily": "SauceCodePro Nerd Font Mono",
     "update.mode": "none",
     "C_Cpp.updateChannel": "Insiders",
 }
