@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+logger -t "${0##*/}" "${@:-NO ARGS}"
+
+mod_reload() {
+	modprobe -r hid_multitouch
+	modprobe hid_multitouch
+}
+
+lg_restart() {
+	for i in $(printf '%s\n' $(users) | sed /^root/d | sort | uniq); do
+		sudo -u "$i" libinput-gestures-setup restart
+	done
+}
+
+case "$1" in
+	pre)
+		echo "I only work after resume" >&2
+		;;
+
+	post)
+		mod_reload
+		lg_restart
+		;;
+
+	*)
+		printf '%s\n\t%s\n' "Usage:" "${0##*/} post" >&2
+		exit 1
+		;;
+
+esac
+
