@@ -22,6 +22,10 @@
         "editor.lineHighlightBackground": "#0e2c4a80",
         "editor.selectionBackground": "#003362",
         "editor.findMatchHighlightBackground": "#003362",
+        "editorWarning.foreground": "#33bd90",
+        "editorInfo.foreground": "#0000ff",
+        "list.warningForeground": "#33bd90",
+        "list.errorForeground": "#ff0000",
 
         "terminal.background": "#051421",
         "terminal.foreground": "#d1f4fa",
@@ -48,11 +52,11 @@
     },
     
     "editor.fontFamily": "SauceCodePro Nerd Font Mono",
-    "editor.fontSize": 18,
+    "editor.fontSize": 16,
+    "editor.lineHeight": 20,
     "editor.cursorStyle": "block",
     "editor.lineNumbers": "on",
     "editor.renderWhitespace": "all",
-    "editor.lineHeight": 22,
 
     "vim.leader": "-",
     "vim.hlsearch": true,
