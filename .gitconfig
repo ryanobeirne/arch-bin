@@ -23,6 +23,7 @@
 	untracked = cyan
 [alias]
 	A = add -A
+	au = add --update
 	c = commit
 	ca = commit --amend
 	cm = commit -m
@@ -35,7 +36,8 @@
 	lf = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit --follow
 	pushAll = !git remote | xargs -L1 git push --all
 	pushall = !git remote | xargs -L1 git push
-	s = status
+	s = status -uno
+	su = status
 	sm = submodule
 	sma = submodule add
 	sp = status --porcelain

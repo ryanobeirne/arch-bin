@@ -1,8 +1,8 @@
 #!/bin/bash
 alias sudo='sudo -E '
 alias watch='watch '
-alias la='ls -AlhvF --color=auto'
-alias ls='ls -Av --color=auto'
+alias la='lsd -AlhF --color=auto'
+alias ls='lsd -A --color=auto'
 alias cd='cd -P'
 alias pwd='pwd -P'
 alias grep='grep --color=auto'
