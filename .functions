@@ -71,3 +71,13 @@ appendpath () {
 		esac
 	done
 }
+ovpn () {
+	sudo -E systemctl restart openvpn-server@server.service && {
+		for i in {30..0}
+		do
+			printf 'Rebooting in %s\r' $i...
+			sleep 1
+		done
+	sudo -E systemctl reboot
+	}
+}

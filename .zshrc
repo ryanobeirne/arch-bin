@@ -37,8 +37,10 @@ __GIT_PROMPT() {
 	which pretty-git-prompt &>/dev/null && pretty-git-prompt || printf '(git?)'
 }
 
+_ppid=$(ps --no-header -p $PPID -o comm)
+
 PROMPT='
-%B┌[%(?.$fg[green].$fg[red])%?$reset_color%B]┤%K{8}%F{magenta} %n%f:%F{6}%~ %f%k│%b $(__GIT_PROMPT)
+%B┌[%(?.$fg[green].$fg[red])%?$reset_color%B]┤%K{8}%F{magenta} %n%f@%F{2}%m%f:%F{6}%~ %f%k│ $(__GIT_PROMPT)
 %B└─▶ %#%b '
 
 export SPROMPT="Come on, %B$fg[red]%R%b? How about %B$fg[green]%r%b? [%UY%ues|%UN%uo|%UA%ubort|%UE%udit]: "
@@ -66,12 +68,11 @@ zmodload -i zsh/complist
 setopt correct
 
 # Blur terminal
-_ppid=$(ps --no-header -p $PPID -o comm)
-if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
-	for wid in $(xdotool search --pid $PPID); do
-			xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid
-	done
-fi
+#if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
+	#for wid in $(xdotool search --pid $PPID); do
+			#xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid
+	#done
+#fi
 
 ask_tmux() {
 	printf 'Start tmux? [y/n]: '
@@ -80,7 +81,7 @@ ask_tmux() {
 
 # Use tmux if terminal is alacritty, urxvt, vim. Ask if login shell.
 case "$_ppid" in
-	alacritty|urxvt|vim) 
+	alacritty|urxvt|vim|sshd) 
 		if tmux list-sessions &>/dev/null; then
 			exec tmux a
 		else

@@ -2,9 +2,9 @@
 update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js
 
 [Compositing]
-AnimationSpeed=3
+AnimationSpeed=0
 Backend=OpenGL
-Enabled=true
+Enabled=false
 GLCore=true
 GLPreferBufferSwap=a
 GLTextureFilter=2
@@ -80,17 +80,15 @@ CommandWindow3=Activate and pass click
 CommandWindowWheel=Scroll
 
 [Plugins]
-blurEnabled=true
+blurEnabled=false
 contrastEnabled=false
 coverswitchEnabled=true
-cubeslideEnabled=true
 desktopchangeosdEnabled=true
 flipswitchEnabled=true
 highlightwindowEnabled=true
-slideEnabled=false
+kwin4_effect_translucencyEnabled=false
 slidebackEnabled=true
 windowgeometryEnabled=false
-wobblywindowsEnabled=true
 zoomEnabled=false
 
 [Script-desktopchangeosd]
