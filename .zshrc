@@ -22,7 +22,7 @@ export GOPATH=~/go
 export LC_ALL=en_US.UTF-8
 export HOSTALIASES=~/.config/hosts
 
-mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin)
+mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin /opt/vc/bin /opt/pihole)
 for p in "${mypaths[@]}"; do
 	appendpath "$p"
 done
