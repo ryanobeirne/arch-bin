@@ -85,4 +85,5 @@
     "terminal.integrated.fontFamily": "SauceCodePro Nerd Font Mono",
     "update.mode": "none",
     "C_Cpp.updateChannel": "Insiders",
+    "python.jediEnabled": false,
 }

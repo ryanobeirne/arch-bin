@@ -24,7 +24,7 @@ if [[ $TERM == "linux" ]]; then
 	echo -en "\e]P7DFE3E5" #lightgrey
 	echo -en "\e]PFECF8FB" #white
 
-	setfont /usr/share/kbd/consolefonts/ter-116n.psf.gz
+	setfont /usr/share/kbd/consolefonts/ter-118n.psf.gz
 
 	clear #for background artifacting
 fi

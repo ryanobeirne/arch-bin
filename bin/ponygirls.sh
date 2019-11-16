@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-names=(Lily Lilah Olivia Mommy Daddy Gramzi Poppy Stephanie)
+names=(Lily Lilah Olivia Mommy Daddy GG GG-Pa Gramzi Poppy Stephanie)
 
 pony() {
 	while :; do
