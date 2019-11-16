@@ -1,7 +1,7 @@
 [user]
-	email = ryanobeirne@gmail.com
+	email = ryanobeirne@ryanobeirne.com
 	name = Ryan O'Beirne
-	signingkey = ryanobeirne@gmail.com
+	signingkey = ryanobeirne@ryanobeirne.com
 [core]
 	editor = vim
 [color]
