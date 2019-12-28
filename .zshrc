@@ -69,7 +69,7 @@ bindkey '' backward-delete-char
 
 autoload -U compinit && compinit -i
 zmodload -i zsh/complist
-setopt correct
+setopt correct autocd
 
 # Blur terminal
 if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
