@@ -56,13 +56,11 @@ bindkey '[1~]' beginning-of-line
 bindkey '' end-of-line
 bindkey '[4~]' end-of-line
 bindkey '' backward-kill-line
-bindkey '' kill-line
-bindkey '' backward-word
-bindkey '' forward-word
+bindkey '' kill-buffer
 bindkey '.' insert-last-word
-bindkey 'u' undo
+bindkey '' undo
 bindkey '  ' magic-space
-bindkey ''	vi-cmd-mode
+bindkey '' vi-cmd-mode
 bindkey '' history-incremental-search-backward
 bindkey '' backward-kill-word
 bindkey '' backward-delete-char
