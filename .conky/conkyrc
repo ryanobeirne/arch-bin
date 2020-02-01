@@ -44,8 +44,7 @@ conky.config = {
 }
 
 conky.text = [[
-${alignc}${color1}${font xos4 Terminus:style=bold:pixelsize=36}${time %l:%M %p}$font
-${alignc}${time %A} ${time %d} ${time %B} ${time %Y}
+${alignc}${color1}${font xos4 Terminus:style=bold:pixelsize=36}FX505DY${font}
 
 ${color1}UNIX Time: ${alignr}${color0}${utime %s}
 ${color1}UTC: ${alignr}${color0}${utime}
@@ -57,7 +56,8 @@ ${color1}CPU: ${alignr}${color0}${execi 1000 cat /proc/cpuinfo | grep 'model nam
 ${color1}GPU:
 ${color0}${execi 1000 lspci | grep VGA | sed 's/.*: //; s/^/+ /' | fold -sw 35}
 $hr
-${color1}BAT0: ${color}${exec cat /sys/class/power_supply/BAT0/status}: ${battery_time}
+${color1}BAT0: ${color}${exec cat /sys/class/power_supply/BAT0/status}: ${battery_time} \
+${alignr}${exec awk '{printf "%0.2f", $1 / 1000000}' /sys/class/power_supply/BAT0/power_now }W
   $color${battery_percent}% $color1${battery_bar}
 $hr
 ${color1}RAM Usage:$color $mem/$memmax
