@@ -34,6 +34,9 @@ TabBoxAlternative=false
 BorderActivate=9
 BorderActivateCylinder=9
 BorderActivateSphere=9
+TouchBorderActivate=9
+TouchBorderActivateCylinder=9
+TouchBorderActivateSphere=9
 
 [Effect-CubeSlide]
 RotationDuration=300
@@ -41,6 +44,7 @@ RotationDuration=300
 [Effect-DesktopGrid]
 BorderActivate=9
 LayoutMode=1
+TouchBorderActivate=9
 
 [Effect-FlipSwitch]
 TabBox=false
@@ -50,6 +54,9 @@ TabBoxAlternative=false
 BorderActivate=1
 BorderActivateAll=7
 BorderActivateClass=5
+TouchBorderActivate=7
+TouchBorderActivateAll=9
+TouchBorderActivateClass=9
 
 [ElectricBorders]
 Bottom=None
@@ -114,6 +121,8 @@ MultiScreenMode=0
 ShowDesktopMode=0
 ShowTabBox=true
 SwitchingMode=0
+TouchBorderActivate=9
+TouchBorderAlternativeActivate=9
 
 [TabBoxAlternative]
 ActivitiesMode=1
@@ -126,6 +135,12 @@ MultiScreenMode=0
 ShowDesktopMode=0
 ShowTabBox=true
 SwitchingMode=0
+
+[TouchEdges]
+Bottom=None
+Left=None
+Right=None
+Top=None
 
 [Windows]
 ActiveMouseScreen=false
