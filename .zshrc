@@ -83,7 +83,7 @@ ask_tmux() {
 
 # Use tmux if terminal is alacritty, urxvt, vim. Ask if login shell.
 case "$_ppid" in
-	alacritty|urxvt|vim) 
+	alacritty|urxvt|vim|konsole)
 		if tmux list-sessions &>/dev/null; then
 			exec tmux a
 		else
