@@ -59,18 +59,18 @@ wmclasscomplete=false
 wmclassmatch=3
 
 [5]
-Description=Chrome
+Description=Browsers
 clientmachine=localhost
 clientmachinematch=0
 desktop=2
 desktoprule=3
-title=Amazon.com: Silicon Power 1TB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5" 7mm (0.28") Internal Solid State Drive (SP001TBSS3A55S25): Computers & Accessories - Google Chrome
+title=reddit: the front page of the internet - Mozilla Firefox
 titlematch=0
 windowrole=browser
-windowrolematch=0
-wmclass=google-chrome
+windowrolematch=2
+wmclass=
 wmclasscomplete=false
-wmclassmatch=1
+wmclassmatch=0
 
 [6]
 Description=Code
