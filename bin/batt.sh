@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 # Gets all the battery variables
-source /sys/class/power_supply/BAT0/uevent
+while read line; do
+	key="$(cut -d= -f1 <<< "$line")"
+	val="$(cut -d= -f2 <<< "$line")"
+	readonly "$key"="$val"
+done < "/sys/class/power_supply/BAT0/uevent"
 
 # Returns percentage rounded to nearest integer
 bat_percent() {
@@ -10,9 +14,11 @@ bat_percent() {
 
 # Decides which charging icon to use
 charge_icon() {
+	echo "$POWER_SUPPLY_STATUS" >&2
 	case "$POWER_SUPPLY_STATUS" in
 		"Charging") printf '🔌' ;;
 		"Discharging") printf ' ' ;;
+		"Not charging") printf '' ;;
 		*) printf '?' ;;
 	esac
 }
