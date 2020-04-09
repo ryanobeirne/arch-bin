@@ -41,3 +41,8 @@
 	sm = submodule
 	sma = submodule add
 	sp = status --porcelain
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
