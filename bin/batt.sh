@@ -1,13 +1,26 @@
 #!/usr/bin/env bash
+
+# Gets all the battery variables
+source /sys/class/power_supply/BAT0/uevent
+
 # Returns percentage rounded to nearest integer
 bat_percent() {
-	cat /sys/class/power_supply/BAT0/capacity
+	printf '%d' "$POWER_SUPPLY_CAPACITY"
+}
+
+# Decides which charging icon to use
+charge_icon() {
+	case "$POWER_SUPPLY_STATUS" in
+		"Charging") printf '🔌' ;;
+		"Discharging") printf ' ' ;;
+		*) printf '?' ;;
+	esac
 }
 
 #                0 1 2 3 4 5 6 7 8 9 10 11)
 readonly ICONS=(              )
 
-get_icon() {
+bat_icon() {
     local bp="$1"
     case "$bp" in
         [0-9] ) printf '%s' "${ICONS[0]}";;
@@ -25,10 +38,8 @@ get_icon() {
     esac
 }
 
-
 bp=$(bat_percent)
+icon=$(bat_icon "$bp")
 
-icon=$(get_icon "$bp")
-
-printf '%s %s%%' "$icon" "$bp"
+printf '%s%s%s%%' "$icon" "$(charge_icon)" "$bp"
 
