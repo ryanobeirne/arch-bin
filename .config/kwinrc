@@ -69,15 +69,15 @@ TopRight=None
 
 [MouseBindings]
 CommandActiveTitlebar1=Raise
-CommandActiveTitlebar2=Start window tab drag
+CommandActiveTitlebar2=Raise
 CommandActiveTitlebar3=Operations menu
-CommandAll1=Move
-CommandAll2=Toggle raise and lower
-CommandAll3=Resize
+CommandAll1=Nothing
+CommandAll2=Nothing
+CommandAll3=Nothing
 CommandAllKey=Alt
 CommandAllWheel=Nothing
 CommandInactiveTitlebar1=Activate and raise
-CommandInactiveTitlebar2=Start window tab drag
+CommandInactiveTitlebar2=Activate and raise
 CommandInactiveTitlebar3=Operations menu
 CommandTitlebarWheel=Nothing
 CommandWindow1=Activate, raise and pass click
