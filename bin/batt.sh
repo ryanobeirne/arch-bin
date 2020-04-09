@@ -3,7 +3,7 @@
 # Gets all the battery variables
 while read line; do
 	key="$(cut -d= -f1 <<< "$line")"
-	val="$(cut -d= -f2 <<< "$line")"
+	val="$(cut -d= -f2- <<< "$line")"
 	readonly "$key"="$val"
 done < "/sys/class/power_supply/BAT0/uevent"
 
@@ -14,7 +14,6 @@ bat_percent() {
 
 # Decides which charging icon to use
 charge_icon() {
-	echo "$POWER_SUPPLY_STATUS" >&2
 	case "$POWER_SUPPLY_STATUS" in
 		"Charging") printf '🔌' ;;
 		"Discharging") printf ' ' ;;
