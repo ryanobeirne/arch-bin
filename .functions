@@ -9,19 +9,8 @@ colo () {
   done
 }
 
-rustcr () {
-        rustc "$1" && $(realpath "${1%.*}")
-}
-
 math () {
 	awk "BEGIN {print $* }"
-}
-
-vimupdate () {
-  (
-    cd ~/.vim
-    git fetch --recurse-submodules && git pull --recurse-submodules
-  )
 }
 
 say () { 
@@ -38,12 +27,12 @@ rnl () {
 }
 
 rust () {
-	temp=$(mktemp) 
-	rustc -o $temp <(cat <<EOF
-$@
+	temp="$(mktemp)" 
+	rustc -o "$temp" <(cat <<EOF
+fn main() { $@ }
 EOF
-	) && $temp
-	rm $temp
+	) && "$temp"
+	rm "$temp"
 }
 
 precmd () {

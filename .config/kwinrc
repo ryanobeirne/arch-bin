@@ -26,7 +26,7 @@ Rows=1
 
 [Effect-CoverSwitch]
 MirrorFrontColor=5,20,33
-TabBox=true
+TabBox=false
 TabBoxAlternative=false
 
 [Effect-Cube]
@@ -57,6 +57,9 @@ TouchBorderActivate=7
 TouchBorderActivateAll=9
 TouchBorderActivateClass=9
 
+[Effect-Slide]
+SlideDocks=true
+
 [ElectricBorders]
 Bottom=None
 BottomLeft=None
@@ -71,11 +74,11 @@ TopRight=None
 CommandActiveTitlebar1=Raise
 CommandActiveTitlebar2=Raise
 CommandActiveTitlebar3=Operations menu
-CommandAll1=Nothing
-CommandAll2=Nothing
-CommandAll3=Nothing
-CommandAllKey=Alt
-CommandAllWheel=Nothing
+CommandAll1=Move
+CommandAll2=Minimize
+CommandAll3=Resize
+CommandAllKey=Meta
+CommandAllWheel=Previous/Next Desktop
 CommandInactiveTitlebar1=Activate and raise
 CommandInactiveTitlebar2=Activate and raise
 CommandInactiveTitlebar3=Operations menu
@@ -89,13 +92,11 @@ CommandWindowWheel=Scroll
 blurEnabled=true
 contrastEnabled=false
 coverswitchEnabled=true
-cubeslideEnabled=true
 desktopchangeosdEnabled=true
 flipswitchEnabled=true
 highlightwindowEnabled=true
 kwin4_effect_fadeEnabled=false
 kwin4_effect_scaleEnabled=true
-slideEnabled=false
 slidebackEnabled=true
 windowgeometryEnabled=false
 wobblywindowsEnabled=true
@@ -107,14 +108,14 @@ TextOnly=false
 
 [TabBox]
 ActivitiesMode=1
-ApplicationsMode=0
+ApplicationsMode=1
 BorderActivate=9
 BorderAlternativeActivate=9
 DesktopLayout=org.kde.breeze.desktop
 DesktopListLayout=org.kde.breeze.desktop
 DesktopMode=0
-HighlightWindows=true
-LayoutName=org.kde.breeze.desktop
+HighlightWindows=false
+LayoutName=big_icons
 MinimizedMode=0
 MultiScreenMode=0
 ShowDesktopMode=0
