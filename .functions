@@ -60,3 +60,7 @@ appendpath () {
 		esac
 	done
 }
+
+ssht () {
+	ssh -t "$@" 'TMUX="$(which tmux)"; tmux a || tmux'
+}
