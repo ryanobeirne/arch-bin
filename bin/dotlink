@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-git init
-git remote add origin git@gitlab.com:ryanobeirne/arch-bin.git
-git fetch origin master
-git checkout -b master
