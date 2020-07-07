@@ -101,9 +101,9 @@ ${color2}root: ${color}${fs_used /}/${fs_size /}: ${fs_free /} free
 ${diskiograph_read /dev/nvme0n1p2 25,145 022B41 97d8f4 -t} ${diskiograph_write /dev/nvme0n1p2 25,145 022B41 97d8f4 -t}
 ${color2}home: ${color}${fs_used /home}/${fs_size /home}: ${fs_free /home} free
   ${fs_used_perc /home}% $color1${fs_bar 6 /home}
-${diskiograph_read /dev/archlinux/home 25,145 022B41 97d8f4 -t} ${diskiograph_write /dev/archlinux/home 25,145 022B41 97d8f4 -t}
-${color2} ESP: $color${fs_used /boot/efi}/${fs_size /boot/efi}: ${fs_free /boot/efi} free
-  ${fs_used_perc /boot/efi}% $color1${fs_bar 6 /boot/efi}
+${diskiograph_read /dev/vg1/home 25,145 022B41 97d8f4 -t} ${diskiograph_write /dev/vg1/home 25,145 022B41 97d8f4 -t}
+${color2} ESP: $color${fs_used /boot}/${fs_size /boot}: ${fs_free /boot} free
+  ${fs_used_perc /boot}% $color1${fs_bar 6 /boot}
 $hr
 ${color1}WiFi: ${scroll wait 14 ${color}${wireless_essid wlp5s0}} ${color1}|${color} ${addr wlp5s0}
 ${color1}Up:$color ${upspeed wlp5s0} ${alignr}${color1}Down:$color ${downspeed wlp5s0}
