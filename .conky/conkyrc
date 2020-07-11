@@ -60,7 +60,7 @@ ${color1}RAM Usage:$color $mem/$memmax
 ${color1}Swap Usage:$color $swap/$swapmax
   $swapperc% $color1${swapbar 4}
 $hr
-${color1}CPU: ${color}${cpu}% ${alignc}${freq_g}GHz ${alignr}${exec awk '{sum+=$1}END{printf "%0.0f", sum / NR / 1000}' /sys/class/hwmon/hwmon*/temp*_input}°C
+${color1}CPU: ${color}${cpu}% ${alignc}${freq_g}GHz ${alignr}${exec ~/bin/cputemp.sh}
 ${color0}${cpu cpu1}% $color1${cpubar cpu1 6,105}  \
 ${color0}${alignr 5}${cpu cpu2}% $color1${cpubar cpu2 6,105}
 ${color0}${cpu cpu3}% $color1${cpubar cpu3 6,105}  \
