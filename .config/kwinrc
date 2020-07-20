@@ -88,6 +88,11 @@ CommandWindow2=Activate and pass click
 CommandWindow3=Activate and pass click
 CommandWindowWheel=Scroll
 
+[NightColor]
+Active=true
+LatitudeAuto=35.6263
+LongitudeAuto=-78.8458
+
 [Plugins]
 blurEnabled=true
 contrastEnabled=false
@@ -179,4 +184,4 @@ WindowSnapZone=10
 
 [org.kde.kdecoration2]
 library=org.kde.breeze
-theme=
+theme=Breeze

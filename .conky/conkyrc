@@ -16,12 +16,12 @@ conky.config = {
 	draw_graph_borders = true,
 	draw_outline = false,
 	use_xft = true,
-	font = 'xos4 Terminus:size=11',
-	gap_x = 5,
-	gap_y = 40,
-	maximum_width = 300,
-	minimum_height = 5,
-	minimum_width = 5,
+	font = 'xos4 Terminus:size=14',
+	gap_x = 8,
+	gap_y = 60,
+	maximum_width = 450,
+	minimum_height = 8,
+	minimum_width = 8,
 	net_avg_samples = 2,
 	no_buffers = true,
 	out_to_console = false,
@@ -56,61 +56,61 @@ ${color1}CPU: ${alignr}${color0}${execi 1000 cat /proc/cpuinfo | grep 'model nam
 ${color1}GPU: ${scroll wait 33 ${color0}${execi 1000 lspci | grep VGA | sed 's/.*: //; s/^/+ /'}}
 $hr
 ${color1}RAM Usage:$color $mem/$memmax
-  $memperc% $color1${membar 4}
+  $memperc% $color1${membar 6}
 ${color1}Swap Usage:$color $swap/$swapmax
-  $swapperc% $color1${swapbar 4}
+  $swapperc% $color1${swapbar 6}
 $hr
 ${color1}CPU: ${color}${cpu}% ${alignc}${freq_g}GHz ${alignr}${exec ~/bin/cputemp.sh}
-${color0}${cpu cpu1}% $color1${cpubar cpu1 6,105}  \
-${color0}${alignr 5}${cpu cpu2}% $color1${cpubar cpu2 6,105}
-${color0}${cpu cpu3}% $color1${cpubar cpu3 6,105}  \
-${color0}${alignr 5}${cpu cpu4}% $color1${cpubar cpu4 6,105}
-${color0}${cpu cpu5}% $color1${cpubar cpu5 6,105}  \
-${color0}${alignr 5}${cpu cpu6}% $color1${cpubar cpu6 6,105}
-${color0}${cpu cpu7}% $color1${cpubar cpu7 6,105}  \
-${color0}${alignr 5}${cpu cpu8}% $color1${cpubar cpu8 6,105}
-${color0}${cpu cpu9}% $color1${cpubar cpu9 6,105}  \
-${color0}${alignr 5}${cpu cpu10}% $color1${cpubar cpu10 6,105}
-${color0}${cpu cpu11}% $color1${cpubar cpu11 6,105}  \
-${color0}${alignr 5}${cpu cpu12}% $color1${cpubar cpu12 6,105}
-${color0}${cpu cpu13}% $color1${cpubar cpu13 6,105}  \
-${color0}${alignr 5}${cpu cpu14}% $color1${cpubar cpu14 6,105}
-${color0}${cpu cpu15}% $color1${cpubar cpu15 6,105}  \
-${color0}${alignr 5}${cpu cpu16}% $color1${cpubar cpu16 6,105}
-${color0}${cpu cpu17}% $color1${cpubar cpu17 6,105}  \
-${color0}${alignr 5}${cpu cpu18}% $color1${cpubar cpu18 6,105}
-${color0}${cpu cpu19}% $color1${cpubar cpu19 6,105}  \
-${color0}${alignr 5}${cpu cpu20}% $color1${cpubar cpu20 6,105}
-${color0}${cpu cpu21}% $color1${cpubar cpu21 6,105}  \
-${color0}${alignr 5}${cpu cpu22}% $color1${cpubar cpu22 6,105}
-${color0}${cpu cpu23}% $color1${cpubar cpu23 6,105}  \
-${color0}${alignr 5}${cpu cpu24}% $color1${cpubar cpu24 6,105}
-${color0}${cpu cpu25}% $color1${cpubar cpu25 6,105}  \
-${color0}${alignr 5}${cpu cpu26}% $color1${cpubar cpu26 6,105}
-${color0}${cpu cpu27}% $color1${cpubar cpu27 6,105}  \
-${color0}${alignr 5}${cpu cpu28}% $color1${cpubar cpu28 6,105}
-${color0}${cpu cpu29}% $color1${cpubar cpu29 6,105}  \
-${color0}${alignr 5}${cpu cpu30}% $color1${cpubar cpu30 6,105}
-${color0}${cpu cpu31}% $color1${cpubar cpu31 6,105}  \
-${color0}${alignr 5}${cpu cpu32}% $color1${cpubar cpu32 6,105}
-${color0}${cpugraph 40,295 022B41 97d8f4 -t}
+${color0}${cpu cpu1}% $color1${cpubar cpu1 9,157}  \
+${color0}${alignr 5}${cpu cpu2}% $color1${cpubar cpu2 9,157}
+${color0}${cpu cpu3}% $color1${cpubar cpu3 9,157}  \
+${color0}${alignr 5}${cpu cpu4}% $color1${cpubar cpu4 9,157}
+${color0}${cpu cpu5}% $color1${cpubar cpu5 9,157}  \
+${color0}${alignr 5}${cpu cpu6}% $color1${cpubar cpu6 9,157}
+${color0}${cpu cpu7}% $color1${cpubar cpu7 9,157}  \
+${color0}${alignr 5}${cpu cpu8}% $color1${cpubar cpu8 9,157}
+${color0}${cpu cpu9}% $color1${cpubar cpu9 9,157}  \
+${color0}${alignr 5}${cpu cpu10}% $color1${cpubar cpu10 9,157}
+${color0}${cpu cpu11}% $color1${cpubar cpu11 9,157}  \
+${color0}${alignr 5}${cpu cpu12}% $color1${cpubar cpu12 9,157}
+${color0}${cpu cpu13}% $color1${cpubar cpu13 9,157}  \
+${color0}${alignr 5}${cpu cpu14}% $color1${cpubar cpu14 9,157}
+${color0}${cpu cpu15}% $color1${cpubar cpu15 9,157}  \
+${color0}${alignr 5}${cpu cpu16}% $color1${cpubar cpu16 9,157}
+${color0}${cpu cpu17}% $color1${cpubar cpu17 9,157}  \
+${color0}${alignr 5}${cpu cpu18}% $color1${cpubar cpu18 9,157}
+${color0}${cpu cpu19}% $color1${cpubar cpu19 9,157}  \
+${color0}${alignr 5}${cpu cpu20}% $color1${cpubar cpu20 9,157}
+${color0}${cpu cpu21}% $color1${cpubar cpu21 9,157}  \
+${color0}${alignr 5}${cpu cpu22}% $color1${cpubar cpu22 9,157}
+${color0}${cpu cpu23}% $color1${cpubar cpu23 9,157}  \
+${color0}${alignr 5}${cpu cpu24}% $color1${cpubar cpu24 9,157}
+${color0}${cpu cpu25}% $color1${cpubar cpu25 9,157}  \
+${color0}${alignr 5}${cpu cpu26}% $color1${cpubar cpu26 9,157}
+${color0}${cpu cpu27}% $color1${cpubar cpu27 9,157}  \
+${color0}${alignr 5}${cpu cpu28}% $color1${cpubar cpu28 9,157}
+${color0}${cpu cpu29}% $color1${cpubar cpu29 9,157}  \
+${color0}${alignr 5}${cpu cpu30}% $color1${cpubar cpu30 9,157}
+${color0}${cpu cpu31}% $color1${cpubar cpu31 9,157}  \
+${color0}${alignr 5}${cpu cpu32}% $color1${cpubar cpu32 9,157}
+${color0}${cpugraph 60,442 022B41 97d8f4 -t}
 $hr
 ${color1}File systems:
 ${color2}root: ${color}${fs_used /}/${fs_size /}: ${fs_free /} free
-  ${fs_used_perc /}% $color1${fs_bar 6 /}
-${diskiograph_read /dev/nvme0n1p2 25,145 022B41 97d8f4 -t} ${diskiograph_write /dev/nvme0n1p2 25,145 022B41 97d8f4 -t}
+  ${fs_used_perc /}% $color1${fs_bar 9 /}
+${diskiograph_read /dev/nvme0n1p2 37,217 022B41 97d8f4 -t} ${diskiograph_write /dev/nvme0n1p2 37,217 022B41 97d8f4 -t}
 ${color2}home: ${color}${fs_used /home}/${fs_size /home}: ${fs_free /home} free
-  ${fs_used_perc /home}% $color1${fs_bar 6 /home}
-${diskiograph_read /dev/vg1/home 25,145 022B41 97d8f4 -t} ${diskiograph_write /dev/vg1/home 25,145 022B41 97d8f4 -t}
+  ${fs_used_perc /home}% $color1${fs_bar 9 /home}
+${diskiograph_read /dev/vg1/home 37,217 022B41 97d8f4 -t} ${diskiograph_write /dev/vg1/home 37,217 022B41 97d8f4 -t}
 ${color2} ESP: $color${fs_used /boot}/${fs_size /boot}: ${fs_free /boot} free
-  ${fs_used_perc /boot}% $color1${fs_bar 6 /boot}
+  ${fs_used_perc /boot}% $color1${fs_bar 9 /boot}
 $hr
 ${color1}WiFi: ${scroll wait 14 ${color}${wireless_essid wlp5s0}} ${color1}|${color} ${addr wlp5s0}
 ${color1}Up:$color ${upspeed wlp5s0} ${alignr}${color1}Down:$color ${downspeed wlp5s0}
-${upspeedgraph wlp5s0 25,145 022B41 97d8f4 -t} ${downspeedgraph wlp5s0 25,145 022B41 97d8f4 -t}
+${upspeedgraph wlp5s0 37,217 022B41 97d8f4 -t} ${downspeedgraph wlp5s0 37,217 022B41 97d8f4 -t}
 ${color1}Ethernet: ${color}${addr enp4s0}
 ${color1}Up:$color ${upspeed enp4s0} ${alignr}${color1}Down:$color ${downspeed enp4s0}
-${upspeedgraph enp4s0 25,145 022B41 97d8f4 -t} ${downspeedgraph enp4s0 25,145 022B41 97d8f4 -t}
+${upspeedgraph enp4s0 37,217 022B41 97d8f4 -t} ${downspeedgraph enp4s0 37,217 022B41 97d8f4 -t}
 $hr
 ${color1}Processes:$color $processes  ${color1}Running:$color $running_processes
 ${color}Name              PID   CPU%   MEM%
