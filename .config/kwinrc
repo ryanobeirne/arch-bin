@@ -26,8 +26,7 @@ Rows=1
 
 [Effect-CoverSwitch]
 MirrorFrontColor=5,20,33
-TabBox=false
-TabBoxAlternative=false
+TabBoxAlternative=true
 
 [Effect-Cube]
 BorderActivate=9
@@ -47,7 +46,6 @@ TouchBorderActivate=9
 
 [Effect-FlipSwitch]
 TabBox=false
-TabBoxAlternative=false
 
 [Effect-PresentWindows]
 BorderActivate=1
@@ -89,7 +87,6 @@ CommandWindow3=Activate and pass click
 CommandWindowWheel=Scroll
 
 [NightColor]
-Active=true
 LatitudeAuto=35.6263
 LongitudeAuto=-78.8458
 
@@ -134,7 +131,7 @@ ActivitiesMode=1
 ApplicationsMode=0
 DesktopMode=0
 HighlightWindows=true
-LayoutName=org.kde.breeze.desktop
+LayoutName=coverswitch
 MinimizedMode=0
 MultiScreenMode=0
 ShowDesktopMode=0
