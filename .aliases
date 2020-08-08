@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 alias sudo='sudo -E '
 alias watch='watch '
 alias la='lsd -alhF --color=auto'
@@ -6,7 +6,7 @@ alias ls='lsd -a --color=auto'
 alias cd='cd -P'
 alias pwd='pwd -P'
 alias grep='grep --color=auto'
-alias reflect='reflector --verbose --country US --country CA --latest 50 --sort rate -n5'
+alias reflect='reflector --verbose --country US --country CA --latest 50 --sort rate -n5 --protocol https --protocol rsync'
 alias view='vim -R'
 alias .a='$EDITOR ~/.aliases && . ~/.aliases'
 alias .A='$EDITOR ~/.config/alacritty/alacritty.yml'
@@ -32,7 +32,6 @@ alias diff='colordiff'
 alias lb='lsblk -o name,size,fstype,label,uuid,partlabel,partuuid,mountpoint'
 alias tree='tree -C'
 alias :q=exit
-alias qu='yay -Sy && yay -Qu'
 alias open='xdg-open '
 alias hexedit='hexedit --color'
 alias updates='yay -Syy && yay -Qu'
@@ -44,3 +43,4 @@ alias ipa='ip a'
 alias myip='echo $(curl -su "$USER:$HOST" https://d5.ryanobeirne.com -X POST)'
 alias rsync='rsync --times --progress'
 alias qlook='feh -.'
+alias dig=drill
