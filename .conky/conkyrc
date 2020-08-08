@@ -105,7 +105,7 @@ ${diskiograph_read /dev/vg1/home 37,217 022B41 97d8f4 -t} ${diskiograph_write /d
 ${color2} ESP: $color${fs_used /boot}/${fs_size /boot}: ${fs_free /boot} free
   ${fs_used_perc /boot}% $color1${fs_bar 9 /boot}
 $hr
-${color1}WiFi: ${scroll wait 14 ${color}${wireless_essid wlp5s0}} ${color1}|${color} ${addr wlp5s0}
+${color1}WiFi: ${scroll wait 10 ${color}${wireless_essid wlp5s0}} ${color1}|${color}${alignr}${addr wlp5s0}
 ${color1}Up:$color ${upspeed wlp5s0} ${alignr}${color1}Down:$color ${downspeed wlp5s0}
 ${upspeedgraph wlp5s0 37,217 022B41 97d8f4 -t} ${downspeedgraph wlp5s0 37,217 022B41 97d8f4 -t}
 ${color1}Ethernet: ${color}${addr enp4s0}
