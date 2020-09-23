@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+ctof() {
+	temp_c="$1"
+	awk -v temp_c="$temp_c" 'BEGIN {printf "%f°C = %f°F\n", temp_c, (temp_c * 9/5) + 32}'
+}
+
+ftoc() {
+	temp_f="$1"
+	awk -v temp_f="$temp_f" 'BEGIN {printf "%f°F = %f°C\n", temp_f, (temp_f - 32) * 5/9}'
+}
+
+for i in "$@"; do
+	case "${0##*/}" in
+		ctof | c2f) ctof "$i";;
+		ftoc | f2c) ftoc "$i";;
+		*) printf 'Unrecoginzed executable: `%s`\n' "$0"
+	esac
+done
