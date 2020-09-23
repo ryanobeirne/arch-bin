@@ -61,6 +61,25 @@ appendpath () {
 	done
 }
 
+appendfpath () {
+	for p in "$@"; do
+		case ":$FPATH:" in
+			*:"$p":*)
+				;;
+			*)
+				[[ -d "$p" ]] && export FPATH="${FPATH:+$FPATH:}$p"
+				;;
+		esac
+	done
+}
+
 ssht () {
 	ssh -t "$@" 'TMUX="$(which tmux)"; tmux a || tmux'
+}
+
+lw () {
+	for i in "$@"
+	do
+		yay -Qo $(which -a "$i")
+	done
 }

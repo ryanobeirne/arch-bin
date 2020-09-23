@@ -1,3 +1,14 @@
+export HISTFILE=~/.zsh_history
+export SAVEHIST=10000
+export HISTSIZE=20000
+export EDITOR='vim'
+export PAGER='less -iR'
+export GOPATH=~/go
+export LC_ALL=en_US.UTF-8
+export HOSTALIASES=~/.config/hosts
+export GIT_PS1_SHOWDIRTYSTATE=true
+export MAKEFLAGS="-j$(nproc)"
+
 [[ $- != *i* ]] && return
 
 sources=(
@@ -13,19 +24,12 @@ for s in "${sources[@]}"; do
   [ -r "$s" ] && . "$s"
 done
 
-export HISTFILE=~/.zsh_history
-export SAVEHIST=10000
-export HISTSIZE=20000
-export EDITOR='vim'
-export PAGER='less -iR'
-export GOPATH=~/go
-export LC_ALL=en_US.UTF-8
-export HOSTALIASES=~/.config/hosts
-
-mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin)
+mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin ~/.gem/ruby/2.7.0/bin)
 for p in "${mypaths[@]}"; do
 	appendpath "$p"
 done
+
+appendfpath ~/.zsh/completions ~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/zsh/site-functions
 
 # Load colors.
 autoload -U colors
@@ -34,7 +38,7 @@ colors
 setopt PROMPT_SUBST
 
 __GIT_PROMPT() {
-	which pretty-git-prompt &>/dev/null && pretty-git-prompt || printf '(git?)'
+	[[ -n "$GIT_PS1_SHOWDIRTYSTATE" ]] && which pretty-git-prompt &>/dev/null && pretty-git-prompt || printf '(git?)'
 }
 
 _ppid=$(ps --no-header -p $PPID -o comm)
