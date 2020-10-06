@@ -1,3 +1,13 @@
+[Desktop Entry]
+DefaultProfile=Astronaut.profile
+
+[Favorite Profiles]
+Favorites=
+
+[FileDialogSize]
+Height 1440=765
+Width 2560=1300
+
 [General]
 Close After Last=false
 Config Revision=10
@@ -13,6 +23,11 @@ Show Menu Bar=true
 Show Status Bar=true
 Show Tab Bar=true
 Startup Session=manual
+
+[KFileDialog Settings]
+Recent Files[$e]=settings.json,file:$HOME/.config/kate/lspclient/settings.json
+Recent URLs[$e]=file:$HOME/.config/kate/lspclient/
+detailViewIconSize=0
 
 [KTextEditor Document]
 Allow End of Line Detection=true
@@ -66,6 +81,7 @@ Auto Center Lines=0
 Auto Completion=true
 Backspace Remove Composed Characters=false
 Bookmark Menu Sorting=0
+Bracket Match Preview=false
 Chars To Enclose Selection=
 Default Mark Type=1
 Dynamic Word Wrap=true
@@ -110,8 +126,15 @@ RunPrefix=
 SetEditor=false
 
 [MainWindow]
-Height 1440=1093
-Width 2560=1908
+DisplayPort-0 Height 1440=1104
+DisplayPort-0 Width 2560=1529
+DisplayPort-0 XPosition=640
+DisplayPort-0 YPosition=335
+Height 1440=1383
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABfkAAAQqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAEgBnAGQAYgBwAGwAdQBnAGkAbgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 2560=1280
 
 [UiSettings]
 ColorScheme=Breeze Dark
@@ -123,3 +146,23 @@ shadingEnabled=true
 showFullPathOnRoots=false
 sortRole=0
 viewShade=66,73,74
+
+[lspclient]
+AutoHover=true
+CompletionDocumentation=true
+Diagnostics=true
+DiagnosticsHighlight=true
+DiagnosticsHover=true
+DiagnosticsMark=true
+DiagnosticsSize=1024
+IncrementalSync=true
+Messages=true
+MessagesAutoSwitch=1
+ReferencesDeclaration=true
+SemanticHighlighting=true
+ServerConfiguration=file:///home/ryanobeirne/.config/kate/lspclient/settings.json
+SymbolDetails=false
+SymbolExpand=true
+SymbolSort=false
+SymbolTree=true
+TypeFormatting=true

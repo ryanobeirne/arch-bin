@@ -1,8 +1,83 @@
 [Default Item Styles - Schema Breeze Dark]
+Comment=ff7a7c7d,ff808080,,1,,,-,-,,---
 Error=ffda4453,ffda4453,0,,,1,-,-,,---
+Keyword=ffa069cf,ff6b00cf,1,,,,-,-,,---
 
 [Default Item Styles - Schema Normal]
 Error=ffbf0303,ff9c0e0e,,0,,1,-,-,,---
+
+[Default Item Styles - Schema Vim (dark)]
+Error=ffffaa00,ffff5500,1,0,0,1,-,-,,---
+
+[Highlighting JavaScript - Schema Breeze Dark]
+Alerts:Alert Level 1=28,ffe85848,ffe85848,,,,,ff451e1a,ff000000,,---
+Alerts:Alert Level 2=28,ffca9219,ffca9219,,,,,ff451e1a,ff000000,,---
+Alerts:Alert Level 3=28,ff81ca2d,ff81ca2d,,,,,ff4d1f24,ff000000,,---
+Alerts:Normal Text=0,,,,,,,,,,---
+Alerts:Region Marker=25,ff2980b9,ff3daee9,,,,,ff153042,ff000000,,---
+Doxygen:Attention=23,ff3f8058,ff54aa75,1,0,,,,,,---
+Doxygen:Code=21,ff7a7c7d,ff808080,,,,,,,,---
+Doxygen:Comment=21,ff7a7c7d,ff808080,,,,,,,,---
+Doxygen:Custom Tags=23,ff3f8058,ff54aa75,,,,,,,,---
+Doxygen:Description=22,ffa43340,ffda4453,,,,,,,,---
+Doxygen:Dot Graph=21,ff00a000,ffffffff,,1,,,,,,---
+Doxygen:Entities=29,ff4086c0,ff27ae60,1,1,,,,,,---
+Doxygen:Error=30,ffda4453,ffda4453,,,,,,,,---
+Doxygen:Formulas=21,ff00a000,ffffffff,,1,,,,,,---
+Doxygen:HTML Comment=21,ff7a7c7d,ff808080,,,,,,,,---
+Doxygen:HTML Tag=1,,,1,0,,,,,,---
+Doxygen:Identifier=29,ff27ae60,ff27ae60,,,,,,,,---
+Doxygen:Message Sequence Chart=21,ff00a000,ffffffff,,1,,,,,,---
+Doxygen:Normal Text=0,,,,,,,,,,---
+Doxygen:Note=26,ffc45b00,ffe46700,1,0,,,,,,---
+Doxygen:Region=25,ff2980b9,ff3daee9,,,,,ff153042,ff000000,,---
+Doxygen:Tags=23,ff3f8058,ff54aa75,1,,,,,,,---
+Doxygen:Todo=23,ff3f8058,ff54aa75,1,0,,,,,,---
+Doxygen:Types=16,ff2980b9,fffdbc4b,,,,,,,,---
+Doxygen:Verbatim=21,ff7a7c7d,ff808080,,,,,,,,---
+Doxygen:Warning=27,ffda4453,ffda4453,1,0,,,,,,---
+Doxygen:Word=24,ff7f8c8d,ff94a3a4,1,0,,,,,,---
+JavaScript:Binary=18,fff67400,fff67400,,,,,,,,---
+JavaScript:Built-in Objects=6,ff7f8c8d,ffbdc3c7,,,,,,,,---
+JavaScript:Comment=21,ff7a7c7d,ff808080,,,,,,,,---
+JavaScript:Constant=20,ff27aeae,ff27aeae,,,,,,,,---
+JavaScript:ControlFlow=4,fffdbc4b,fffdbc4b,,,,,,,,---
+JavaScript:Decimal=17,fff67400,fff67400,,,,,,,,---
+JavaScript:Error=30,ffda4453,ffda4453,,,,,,,,---
+JavaScript:Escape=11,ff3daee9,ff3daee9,,,,,,,,---
+JavaScript:Float=19,fff67400,fff67400,,,,,,,,---
+JavaScript:Function (Built-in)=8,ff27ae60,ff27ae60,,,,,,,,---
+JavaScript:Function Declaration=2,ff8e44ad,ffaf81ff,,,,,,,,---
+JavaScript:Function Name=2,ff8e44ad,ffaf81ff,,,,,,,,---
+JavaScript:Hex=18,fff67400,fff67400,,,,,,,,---
+JavaScript:JSON=16,ff2980b9,fffdbc4b,0,,,,,,,---
+JavaScript:Keyword=1,,,,,,,,,,---
+JavaScript:Module=15,ff27ae60,ff27ae60,,,,,,,,---
+JavaScript:Normal Text=0,,,,,,,,,,---
+JavaScript:Object Member=9,ff2980b9,fffdbc4b,,,,,,,,---
+JavaScript:Object Method (Built-in)=2,ff8e44ad,ffaf81ff,,1,,,,,,---
+JavaScript:Object Property (Built-in)=9,ff2980b9,fffdbc4b,,1,,,,,,---
+JavaScript:Objects=0,,,,,,,,,,---
+JavaScript:Octal=18,fff67400,fff67400,,,,,,,,---
+JavaScript:Pattern Character Class=11,ff3daee9,ff3daee9,,,,,,,,---
+JavaScript:Pattern Internal Operator=11,ff3daee9,ff3daee9,,,,,,,,---
+JavaScript:Region Marker=25,ff2980b9,ff3daee9,,,,,ff153042,ff000000,,---
+JavaScript:Regular Expression=14,ffda4453,ffda4453,,,,,,,,---
+JavaScript:Reserved=1,,,,1,,,,,,---
+JavaScript:Reserved Char. Escape=11,ff3daee9,ff3daee9,1,,,,,,,---
+JavaScript:Special Operators=1,,,,,,,,,,---
+JavaScript:String=12,fff44f4f,fff44f4f,,,,,,,,---
+JavaScript:Substitution=11,ff3daee9,ff3daee9,,,,,,,,---
+JavaScript:Symbol=5,,,,,,,,,,---
+JavaScript:Template=13,ffda4453,ffda4453,,,,,,,,---
+Modelines:Comment=21,ff7a7c7d,ff808080,,,,,,,,---
+Modelines:Keyword=23,ff3f8058,ff54aa75,,,,,,,,---
+Modelines:Number=17,fff67400,fff67400,,,,,,,,---
+Modelines:Option OFF=29,ff27ae60,ff27ae60,,,,,,,,---
+Modelines:Option ON=29,ff27ae60,ff27ae60,,,,,,,,---
+Modelines:String=12,fff44f4f,fff44f4f,,,,,,,,---
+Modelines:Value=29,ff27ae60,ff27ae60,,,,,,,,---
+Modelines:Variable=24,ff7f8c8d,ff94a3a4,,,,,,,,---
 
 [Highlighting JavaScript React (JSX) - Schema Breeze Dark]
 Alerts:Alert Level 1=28,ffe85848,ffe85848,,,,,ff451e1a,ff000000,,---
@@ -92,5 +167,80 @@ Modelines:String=12,fff44f4f,fff44f4f,,,,,,,,---
 Modelines:Value=29,ff27ae60,ff27ae60,,,,,,,,---
 Modelines:Variable=24,ff7f8c8d,ff94a3a4,,,,,,,,---
 
+[Highlighting None - Schema Breeze Dark]
+None:Normal=0,,,,,,,,,,---
+
 [Highlighting None - Schema Normal]
 None:Normal=0,,,,,,,,,,---
+
+[Highlighting Rust - Schema Breeze Dark]
+Alerts:Alert Level 1=28,ffe85848,ffe85848,,,,,ff451e1a,ff000000,,---
+Alerts:Alert Level 2=28,ffca9219,ffca9219,,,,,ff451e1a,ff000000,,---
+Alerts:Alert Level 3=28,ff81ca2d,ff81ca2d,,,,,ff4d1f24,ff000000,,---
+Alerts:Normal Text=0,,,,,,,,,,---
+Alerts:Region Marker=25,ff2980b9,ff3daee9,,,,,ff153042,ff000000,,---
+Modelines:Comment=21,ff7a7c7d,ff808080,,,,,,,,---
+Modelines:Keyword=23,ff3f8058,ff54aa75,,,,,,,,---
+Modelines:Number=17,fff67400,fff67400,,,,,,,,---
+Modelines:Option OFF=29,ff27ae60,ff27ae60,,,,,,,,---
+Modelines:Option ON=29,ff27ae60,ff27ae60,,,,,,,,---
+Modelines:String=12,fff44f4f,fff44f4f,,,,,,,,---
+Modelines:Value=29,ff27ae60,ff27ae60,,,,,,,,---
+Modelines:Variable=24,ff7f8c8d,ff94a3a4,,,,,,,,---
+Rust:Attribute=9,ff2980b9,fffdbc4b,,,,,,,,---
+Rust:CConstant=20,ff27aeae,ff27aeae,,,,,,,,---
+Rust:CType=16,ff2980b9,fffdbc4b,,,,,,,,---
+Rust:CharEscape=11,ff3daee9,ff3daee9,,,,,,,,---
+Rust:Character=10,ff3daee9,ff3daee9,,,,,,,,---
+Rust:Comment=21,ff7a7c7d,ff808080,,,,,,,,---
+Rust:Constant=20,ff27aeae,ff27aeae,,,,,,,,---
+Rust:Definition=0,ff3276ff,ff0055ff,,,,,,,,---
+Rust:Error=30,ffda4453,ffda4453,,,,,,,,---
+Rust:Keyword=1,ffa069cf,ff6b00cf,1,,,,,,,---
+Rust:Lifetime=29,ff27ae60,ff27ae60,,,,,,,,---
+Rust:Macro=8,ff27ae60,ff27ae60,,,,,,,,---
+Rust:Normal Text=0,ffcfcfc2,ffcfcfc2,,,,,,,,---
+Rust:Number=17,fff67400,fff67400,,,,,,,,---
+Rust:Raw Identifier=23,ff3f8058,ff54aa75,,,,,,,,---
+Rust:Scope=8,ff27ae60,ff27ae60,,,,,,,,---
+Rust:Self=1,ffcf825c,ffcf6433,1,,,,,,,---
+Rust:String=12,fff44f4f,fff44f4f,,,,,,,,---
+Rust:Symbol=5,ffcfcf55,ffcfcf34,,,,,,,,---
+Rust:Trait=6,ff536c8d,ff26538d,,,,,,,,---
+Rust:Type=16,ff2980b9,fffdbc4b,,,,,,,,---
+
+[Highlighting Rust - Schema Vim (dark)]
+Alerts:Alert Level 1=28,ffe85848,ffe85848,,,,,ff451e1a,ff000000,,---
+Alerts:Alert Level 2=28,ffca9219,ffca9219,,,,,ff451e1a,ff000000,,---
+Alerts:Alert Level 3=28,ff81ca2d,ff81ca2d,,,,,,,,---
+Alerts:Normal Text=0,,,,,,,,,,---
+Alerts:Region Marker=25,,,,,,,,,,---
+Modelines:Comment=21,,,,,,,,,,---
+Modelines:Keyword=23,,,,,,,,,,---
+Modelines:Number=17,,,,,,,,,,---
+Modelines:Option OFF=29,,,,,,,,,,---
+Modelines:Option ON=29,,,,,,,,,,---
+Modelines:String=12,,,,,,,,,,---
+Modelines:Value=29,,,,,,,,,,---
+Modelines:Variable=24,,,,,,,,,,---
+Rust:Attribute=9,,,,,,,,,,---
+Rust:CConstant=20,,,,,,,,,,---
+Rust:CType=16,,,,,,,,,,---
+Rust:CharEscape=11,,,,,,,,,,---
+Rust:Character=10,,,,,,,,,,---
+Rust:Comment=21,,,,,,,,,,---
+Rust:Constant=20,,,,,,,,,,---
+Rust:Definition=0,,,,,,,,,,---
+Rust:Error=30,,,,,,,,,,---
+Rust:Keyword=1,,,,,,,,,,---
+Rust:Lifetime=29,,,,,,,,,,---
+Rust:Macro=8,,,,,,,,,,---
+Rust:Normal Text=0,,,,,,,,,,---
+Rust:Number=17,,,,,,,,,,---
+Rust:Raw Identifier=23,,,,,,,,,,---
+Rust:Scope=8,,,,,,,,,,---
+Rust:Self=1,,,,,,,,,,---
+Rust:String=12,,,,,,,,,,---
+Rust:Symbol=5,,,,,,,,,,---
+Rust:Trait=6,,,,,,,,,,---
+Rust:Type=16,,,,,,,,,,---

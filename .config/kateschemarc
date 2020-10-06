@@ -34,3 +34,6 @@ Color Template Focused Editable Placeholder[$d]
 Color Template Not Editable Placeholder[$d]
 Color Word Wrap Marker[$d]
 dummy=prevent-empty-group
+
+[Vim (dark)]
+dummy=prevent-empty-group
