@@ -102,6 +102,7 @@ GenericName[uk]=Спадний термінал
 GenericName[x-test]=xxDrop-down Terminalxx
 GenericName[zh_CN]=拉幕式终端
 GenericName[zh_TW]=下拉式終端機
+Hidden=true
 Icon=yakuake
 MimeType=
 Name[en_US]=Yakuake
