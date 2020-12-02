@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+trap "exit 130" TERM INT
+
 readonly PIGUARD="piguard-dns"
 readonly SPOONFLOWER="spoonflower-dns"
 
@@ -26,14 +28,17 @@ spoonflower() {
 }
 
 pick_one() {
-	printf '1: %s\n' "$PIGUARD" >&2
-	printf '2: %s\n' "$SPOONFLOWER" >&2
-	read -rp "Pick one [1|2]: " pick
-	case "$pick" in
-		1) printf '%s' "$PIGUARD";;
-		2) printf '%s' "$SPOONFLOWER";;
-		*) echo "Invalid pick: '$pick'" >&2; pick_one;;
-	esac
+	#printf '1: %s\n' "$PIGUARD" >&2
+	#printf '2: %s\n' "$SPOONFLOWER" >&2
+	#read -rp "Pick one [1|2]: " pick
+	#case "$pick" in
+		#1) printf '%s' "$PIGUARD";;
+		#2) printf '%s' "$SPOONFLOWER";;
+		#*) echo "Invalid pick: '$pick'" >&2; pick_one;;
+	#esac
+	kdialog --menu "Pick a WireGuard tunnel:" \
+		"$PIGUARD" "$PIGUARD" \
+		"$SPOONFLOWER" "$SPOONFLOWER"
 }
 
 start_one() {
