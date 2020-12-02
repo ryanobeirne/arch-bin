@@ -69,6 +69,9 @@ Fallback Encoding=ISO 8859-15
 
 [KTextEditor Renderer]
 Animate Bracket Matching=false
+Auto Color Theme Selection=false
+Color Theme=OneDark
+Font=SauceCodePro Nerd Font Mono,10,-1,5,50,0,0,0,0,0
 Schema=Breeze Dark
 Show Indentation Lines=false
 Show Whole Bracket Expression=false
@@ -128,11 +131,16 @@ SetEditor=false
 [MainWindow]
 DisplayPort-0 Height 1440=1104
 DisplayPort-0 Width 2560=1529
-DisplayPort-0 XPosition=640
-DisplayPort-0 YPosition=335
+DisplayPort-0 XPosition=481
+DisplayPort-0 YPosition=133
+DisplayPort-1 Height 1440=1072
+DisplayPort-1 Width 2560=1879
+DisplayPort-1 Window-Maximized 1440x2560=true
+DisplayPort-1 XPosition=0
+DisplayPort-1 YPosition=29
 Height 1440=1383
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAABfkAAAQqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAEgBnAGQAYgBwAGwAdQBnAGkAbgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAACgAAAAVdAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAEgBnAGQAYgBwAGwAdQBnAGkAbgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 2560=1280
 
