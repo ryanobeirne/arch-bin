@@ -55,7 +55,7 @@ appendpath () {
 			*:"$p":*)
 				;;
 			*)
-				[[ -d "$p" ]] && export PATH="${PATH:+$PATH:}$p"
+				[[ -d "$p" ]] && export PATH="$p:${PATH:+$PATH}"
 				;;
 		esac
 	done
@@ -82,4 +82,12 @@ lw () {
 	do
 		yay -Qo $(which -a "$i")
 	done
+}
+qu () {
+	yay -Sy &&
+	yay -Qu &&
+	printf 'Continue system upgrade? [y/n]: ' &&
+	read -q &&
+	echo &&
+	yay -Su --noconfirm
 }
