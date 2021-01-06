@@ -8,6 +8,7 @@ export LC_ALL=en_US.UTF-8
 export HOSTALIASES=~/.config/hosts
 export GIT_PS1_SHOWDIRTYSTATE=true
 export MAKEFLAGS="-j$(nproc)"
+export GPG_TTY="$(tty)"
 
 [[ $- != *i* ]] && return
 
