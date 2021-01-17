@@ -14,7 +14,7 @@ math () {
 }
 
 say () { 
-	espeak -v english-us "$*" 2> /dev/null
+	spd-say "$*" 2> /dev/null
 }
 
 rnb () {
@@ -90,4 +90,7 @@ qu () {
 	read -q &&
 	echo &&
 	yay -Su --noconfirm
+}
+define () {
+	mysql -D english_dictionary --skip-column-names <<< "select word, wordtype, definition from entries where word = '$1';"
 }
