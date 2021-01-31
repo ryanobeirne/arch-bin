@@ -5,6 +5,8 @@ DefaultProfile=Astronaut.profile
 Favorites=
 
 [FileDialogSize]
+DisplayPort-1 Height 1440=765
+DisplayPort-1 Width 2560=1300
 Height 1440=765
 Width 2560=1300
 
@@ -25,9 +27,9 @@ Show Tab Bar=true
 Startup Session=manual
 
 [KFileDialog Settings]
-Recent Files[$e]=settings.json,file:$HOME/.config/kate/lspclient/settings.json
-Recent URLs[$e]=file:$HOME/.config/kate/lspclient/
-detailViewIconSize=0
+Recent Files[$e]=settings.json,file:$HOME/repos/rust/adventofcode/target/debug/day12,file:$HOME/.config/kate/lspclient/settings.json
+Recent URLs[$e]=file:$HOME/.config/kate/lspclient/,file:$HOME/repos/rust/adventofcode/target/debug/
+detailViewIconSize=16
 
 [KTextEditor Document]
 Allow End of Line Detection=true
@@ -46,7 +48,7 @@ Indentation Width=4
 Keep Extra Spaces=false
 Line Length Limit=10000
 Newline at End of File=true
-On-The-Fly Spellcheck=false
+On-The-Fly Spellcheck=true
 Overwrite Mode=false
 PageUp/PageDown Moves Cursor=false
 Remove Spaces=0
@@ -129,18 +131,17 @@ RunPrefix=
 SetEditor=false
 
 [MainWindow]
-DisplayPort-0 Height 1440=1104
-DisplayPort-0 Width 2560=1529
-DisplayPort-0 XPosition=481
-DisplayPort-0 YPosition=133
-DisplayPort-1 Height 1440=1072
-DisplayPort-1 Width 2560=1879
-DisplayPort-1 Window-Maximized 1440x2560=true
-DisplayPort-1 XPosition=0
-DisplayPort-1 YPosition=29
+DisplayPort-0 Height 1440=1232
+DisplayPort-0 Width 2560=2077
+DisplayPort-0 XPosition=269
+DisplayPort-0 YPosition=117
+DisplayPort-1 Height 1440=1144
+DisplayPort-1 Width 2560=1839
+DisplayPort-1 XPosition=303
+DisplayPort-1 YPosition=167
 Height 1440=1383
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAACgAAAAVdAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAEgBnAGQAYgBwAGwAdQBnAGkAbgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAACB0AAAQ9AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAEgBnAGQAYgBwAGwAdQBnAGkAbgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 2560=1280
 

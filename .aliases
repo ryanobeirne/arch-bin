@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
 alias sudo='sudo -E '
 alias watch='watch '
 alias la='lsd -alhF --color=auto'
@@ -49,3 +48,4 @@ alias qlook='feh -.'
 alias dig=drill
 alias gdb='TERM=screen-256color gdb'
 alias rust-gdb='TERM=screen-256color rust-gdb'
+alias please='sudo $(fc -ln -1)'

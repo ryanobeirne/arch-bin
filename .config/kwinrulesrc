@@ -18,23 +18,33 @@ wmclasscomplete=false
 wmclassmatch=1
 
 [2]
-Description=Riot
-clientmachine=localhost
+Description=Element
 clientmachinematch=0
-minimize=true
-minimizerule=3
-title=Riot | Lilah O'Beirne
+desktop=3
+desktoprule=3
 titlematch=0
-wmclass=riot
+wmclass=element
 wmclasscomplete=false
 wmclassmatch=1
 
 [3]
+Description=Slack
+clientmachinematch=0
+desktop=3
+desktoprule=3
+titlematch=0
+wmclass=slack
+wmclasscomplete=false
+wmclassmatch=1
+
+[4]
 Description=Steam
+acceptfocus=false
 clientmachine=localhost
 clientmachinematch=0
 desktop=4
 desktoprule=3
+fpplevel=0
 screen=1
 screenrule=3
 title=Steam
@@ -43,12 +53,10 @@ wmclass=steam
 wmclasscomplete=false
 wmclassmatch=1
 
-[4]
+[5]
 Description=Conky
-acceptfocus=false
 acceptfocusrule=2
 clientmachinematch=0
-fpplevel=0
 fpplevelrule=2
 fsplevel=4
 fsplevelrule=2
@@ -59,7 +67,7 @@ wmclass=conky
 wmclasscomplete=false
 wmclassmatch=1
 
-[5]
+[6]
 Description=Design Activity
 activity=5f824a69-00d5-4c89-8b50-1bfbc313e859
 activityrule=3
@@ -71,7 +79,7 @@ wmclass=(gimp-2\\.10|inkscape|darktable)
 wmclasscomplete=false
 wmclassmatch=3
 
-[6]
+[7]
 Description=Browsers
 clientmachine=localhost
 clientmachinematch=0
@@ -81,11 +89,9 @@ title=reddit: the front page of the internet - Mozilla Firefox
 titlematch=0
 windowrole=browser
 windowrolematch=2
-wmclass=
 wmclasscomplete=false
-wmclassmatch=0
 
-[7]
+[8]
 Description=Code
 clientmachine=localhost
 clientmachinematch=0
@@ -97,17 +103,14 @@ wmclass=code-oss|code
 wmclasscomplete=false
 wmclassmatch=3
 
-[8]
+[9]
 Description=Kontact
 clientmachine=localhost
-clientmachinematch=0
 desktop=4
 desktoprule=3
 title=Summary - Kontact
-titlematch=0
 wmclass=kontact|kmail2|korganizer
-wmclasscomplete=false
 wmclassmatch=3
 
 [General]
-count=8
+count=9
