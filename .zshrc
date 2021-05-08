@@ -25,7 +25,7 @@ for s in "${sources[@]}"; do
   [ -r "$s" ] && . "$s"
 done
 
-mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin ~/.gem/ruby/2.7.0/bin)
+mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin ~/.gem/ruby/2.7.0/bin ~/.node_modules/bin)
 for p in "${mypaths[@]}"; do
 	appendpath "$p"
 done
@@ -63,6 +63,10 @@ bindkey '' vi-cmd-mode
 bindkey '' history-incremental-search-backward
 bindkey '' backward-kill-word
 bindkey '' backward-delete-char
+bindkey -M vicmd v edit-command-line
+
+autoload edit-command-line
+zle -N edit-command-line
 
 autoload -U compinit && compinit -i
 zmodload -i zsh/complist
