@@ -10,7 +10,7 @@ colo () {
 }
 
 math () {
-	awk "BEGIN {print $* }"
+	awk "BEGIN {PI=atan2(0, -1); print $* }"
 }
 
 say () { 
@@ -93,4 +93,13 @@ qu () {
 }
 define () {
 	mysql -D english_dictionary --skip-column-names <<< "select word, wordtype, definition from entries where word = '$1';"
+}
+
+nvm () {
+	unset npm_config_prefix
+	export NVM_DIR=~/.nvm
+	source /usr/share/nvm/nvm.sh
+	source /usr/share/nvm/init-nvm.sh
+	source /usr/share/nvm/install-nvm-exec
+	nvm $*
 }
