@@ -25,7 +25,7 @@ for s in "${sources[@]}"; do
   [ -r "$s" ] && . "$s"
 done
 
-mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin ~/.gem/ruby/2.7.0/bin ~/.node_modules/bin)
+mypaths=(~/bin ~/.cargo/bin /usr/lib/go/bin ~/.gem/ruby/3.0.0/bin ~/.gem/ruby/2.7.0/bin ~/.node_modules/bin)
 for p in "${mypaths[@]}"; do
 	appendpath "$p"
 done
