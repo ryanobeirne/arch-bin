@@ -34,7 +34,7 @@
 	df = d --follow
 	dh = d HEAD^ HEAD
 	f = fetch
-	l = log --graph --pretty=tformat:\"%C(magenta)%h% %C(dim green)(%cr) %C(reset)%C(red)%d\n%C(bold cyan)%G?%C(reset) %C(cyan)%an  %C(dim)<%ae>\n%C(reset)%s\n\" --abbrev-commit
+	l = log --graph --pretty=tformat:\"%C(magenta)%h% %C(dim green)(%cr) %C(reset)%C(red)%d\n%C(bold cyan)%G?%C(reset) %C(cyan)%an %C(dim)<%ae>\n%C(reset)%s\n\" --abbrev-commit
 	lf = l --follow
 	push-all = !git remote | xargs -L1 git push --all
 	pushall = !git remote | xargs -L1 git push
