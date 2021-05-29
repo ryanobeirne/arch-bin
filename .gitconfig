@@ -30,12 +30,12 @@
 	can = commit --amend --no-edit
 	cm = commit -m
 	d = diff
-	dc = diff --cached
-	df = diff --follow
-	dh = diff HEAD^ HEAD
+	dc = d --cached
+	df = d --follow
+	dh = d HEAD^ HEAD
 	f = fetch
-	l = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit
-	lf = log --graph --pretty=tformat:\"%C(magenta)%h%Creset %C(dim green)(%cr) %C(cyan)<%an>%Creset %C(red)%d%Creset\n%s\n\" --abbrev-commit --follow
+	l = log --graph --pretty=tformat:\"%C(magenta)%h% %C(dim green)(%cr) %C(reset)%C(red)%d\n%C(bold cyan)%G?%C(reset) %C(cyan)%an  %C(dim)<%ae>\n%C(reset)%s\n\" --abbrev-commit
+	lf = l --follow
 	push-all = !git remote | xargs -L1 git push --all
 	pushall = !git remote | xargs -L1 git push
 	s = status -uno
