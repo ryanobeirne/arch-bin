@@ -43,7 +43,7 @@ alias sds='systemctl status'
 alias sd='sudo systemctl'
 alias ip='ip --color=auto'
 alias ipa='ip a'
-alias myip='echo $(curl -su "$USER:$HOST" https://d5.ryanobeirne.com -X POST)'
+alias myip='curl -su "$USER:$HOST" https://d5.ryanobeirne.com -X POST'
 alias rsync='rsync --times --progress --partial --no-whole-file'
 alias qlook='feh -.'
 alias dig=drill
