@@ -14,7 +14,7 @@ conky.config = {
 	use_xft = true,
 	font = 'xos4 Terminus:style=bold:size=14',
 	gap_x = 0,
-	gap_y = -800,
+	gap_y = -550,
 	maximum_width = 2880,
 	minimum_height = 5,
 	minimum_width = 5,

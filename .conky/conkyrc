@@ -19,7 +19,7 @@ conky.config = {
 	font = 'xos4 Terminus:size=14',
 	font1 = 'xos4 Terminus:size=11',
 	gap_x = 8,
-	gap_y = 60,
+	gap_y = 40,
 	maximum_width = 450,
 	minimum_height = 8,
 	minimum_width = 8,
@@ -54,7 +54,7 @@ ${color1}Hostname: ${alignr}${color0}$nodename
 ${color1}Uptime:$color ${alignr}$uptime
 ${color1}Kernel: ${alignr}${color0}$sysname $kernel
 ${color1}CPU: ${alignr}${color0}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-27}
-${color1}GPU: ${scroll wait 33 ${color0}${execi 1000 lspci | grep VGA | sed 's/.*: //; s/^/+ /'}}
+${color1}GPU: ${alignr}${scroll wait 43 ${color0}${execi 1000 lspci | grep VGA | sed 's/.*: //; s/^/+ /'}}
 $hr
 
 ${color1}RAM Usage:$color $mem/$memmax
@@ -82,12 +82,12 @@ ${color0}home: ${font1}${color0}${fs_used /home}/${fs_size /home}: ${fs_free /ho
   ${fs_used_perc /home}% $color1${fs_bar 9 /home}
 ${color0}ESP: ${font1}${color0}${fs_used /boot}/${fs_size /boot}: ${fs_free /boot} free${font}
   ${fs_used_perc /boot}% $color1${fs_bar 9 /boot}
-${color0}cloud: ${font1}${color0}${fs_used /home/samba/Movies}/${fs_size /home/samba/Movies}: ${fs_free /home/samba/Movies} free${font}
-  ${fs_used_perc /home/samba/Movies}% $color1${fs_bar 9 /home/samba/Movies}
+${color0}cloud: ${font1}${color0}${fs_used /home/jellyfin/Movies}/${fs_size /home/jellyfin/Movies}: ${fs_free /home/jellyfin/Movies} free${font}
+  ${fs_used_perc /home/jellyfin/Movies}% $color1${fs_bar 9 /home/jellyfin/Movies}
 
 ${color1}Network:
 $hr
-${color1}wlp5s0: ${scroll wait 10 ${color}${wireless_essid wlp5s0}} ${color1}|${color}${alignr}${addr wlp5s0}
+${color1}wlp5s0: ${scroll wait 20 ${color}${wireless_essid wlp5s0}} ${color1}|${color}${alignr}${addr wlp5s0}
 ${color1}Up:$color ${upspeed wlp5s0} ${alignr}${color1}Down:$color ${downspeed wlp5s0}
 ${upspeedgraph wlp5s0 37,217 022B41 97d8f4 -t} ${downspeedgraph wlp5s0 37,217 022B41 97d8f4 -t}
 ${color1}enp4s0: ${color}${alignr}${addr enp4s0}

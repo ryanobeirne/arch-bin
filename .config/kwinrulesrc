@@ -1,12 +1,12 @@
 [$Version]
-update_info=kwinrules.upd:replace-placement-string-to-enum
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
 
 [1]
 Description=Alacritty
 clientmachine=localhost
 clientmachinematch=0
-desktop=1
-desktoprule=3
+desktops=ec72fee0-125e-4eec-b193-08d0531ddaf1
+desktopsrule=3
 maximizehoriz=true
 maximizehorizrule=3
 maximizevert=true
@@ -20,8 +20,8 @@ wmclassmatch=1
 [2]
 Description=Element
 clientmachinematch=0
-desktop=3
-desktoprule=3
+desktops=bb9d5743-fbd8-49b3-bdbc-95e088e60b53
+desktopsrule=3
 titlematch=0
 wmclass=element
 wmclasscomplete=false
@@ -30,8 +30,8 @@ wmclassmatch=1
 [3]
 Description=Slack
 clientmachinematch=0
-desktop=3
-desktoprule=3
+desktops=bb9d5743-fbd8-49b3-bdbc-95e088e60b53
+desktopsrule=3
 titlematch=0
 wmclass=slack
 wmclasscomplete=false
@@ -42,8 +42,8 @@ Description=Steam
 acceptfocus=false
 clientmachine=localhost
 clientmachinematch=0
-desktop=4
-desktoprule=3
+desktops=3615c8cb-dd26-431b-984b-a2ae4ca00952
+desktopsrule=3
 fpplevel=0
 screen=1
 screenrule=3
@@ -83,8 +83,8 @@ wmclassmatch=3
 Description=Browsers
 clientmachine=localhost
 clientmachinematch=0
-desktop=2
-desktoprule=3
+desktops=0e7b8009-9aa4-486d-924f-b4a4a3bfc905
+desktopsrule=3
 title=reddit: the front page of the internet - Mozilla Firefox
 titlematch=0
 windowrole=browser
@@ -95,8 +95,8 @@ wmclasscomplete=false
 Description=Code
 clientmachine=localhost
 clientmachinematch=0
-desktop=3
-desktoprule=3
+desktops=bb9d5743-fbd8-49b3-bdbc-95e088e60b53
+desktopsrule=3
 title=xmlgen.rs - colorburst-tools - Code - OSS
 titlematch=0
 wmclass=code-oss|code
@@ -106,11 +106,12 @@ wmclassmatch=3
 [9]
 Description=Kontact
 clientmachine=localhost
-desktop=4
-desktoprule=3
+desktops=3615c8cb-dd26-431b-984b-a2ae4ca00952
+desktopsrule=3
 title=Summary - Kontact
 wmclass=kontact|kmail2|korganizer
 wmclassmatch=3
 
 [General]
 count=9
+rules=1,2,3,4,5,6,7,8,9

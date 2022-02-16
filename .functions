@@ -83,6 +83,7 @@ lw () {
 		yay -Qo $(which -a "$i")
 	done
 }
+
 qu () {
 	yay -Sy &&
 	yay -Qu &&
@@ -91,6 +92,20 @@ qu () {
 	echo &&
 	yay -Su --noconfirm
 }
+
+d () {
+    case "$1" in
+        0)
+            cd .;;
+        1|2|3|4|5|6|7|8|9)
+            [[ -d "${dirstack[$1]}" ]] && cd "${dirstack[$1]}";;
+        "")
+            dirs -v | head -10;;
+        *)
+            return 69;;
+    esac
+}
+
 define () {
 	mysql -D english_dictionary --skip-column-names <<< "select word, wordtype, definition from entries where word = '$1';"
 }
@@ -102,4 +117,9 @@ nvm () {
 	source /usr/share/nvm/init-nvm.sh
 	source /usr/share/nvm/install-nvm-exec
 	nvm $*
+}
+
+bookmark() {
+	local dir="$1"
+	ln -si "$1" ~/.bookmarks/
 }

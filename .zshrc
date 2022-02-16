@@ -9,6 +9,7 @@ export HOSTALIASES=~/.config/hosts
 export GIT_PS1_SHOWDIRTYSTATE=true
 export MAKEFLAGS="-j$(nproc)"
 export GPG_TTY="$(tty)"
+export CDPATH="$HOME/.bookmarks:/"
 
 [[ $- != *i* ]] && return
 
@@ -31,6 +32,8 @@ for p in "${mypaths[@]}"; do
 done
 
 appendfpath ~/.zsh/completions ~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/zsh/site-functions
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Load colors.
 autoload -U colors

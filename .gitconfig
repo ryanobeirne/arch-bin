@@ -57,3 +57,5 @@
 	smudge = git-lfs smudge -- %f
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = master

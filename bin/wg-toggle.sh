@@ -3,7 +3,7 @@
 trap "exit 130" TERM INT
 
 readonly PIGUARD="piguard-dns"
-readonly SPOONFLOWER="spoonflower-dns"
+readonly SPOONFLOWER="tricenter"
 
 check_dev() {
 	local dev="$1"
@@ -21,8 +21,7 @@ piguard() {
 spoonflower() {
 	local action="$1"
 	case "$action" in
-		start) nmcli con up "$SPOONFLOWER";;
-		stop) nmcli con down "$SPOONFLOWER";;
+		start | stop) systemctl  "$action" "wg-quick@$SPOONFLOWER";;
 		*) echo "Invalid action: $action" >&2; return 1;;
 	esac
 }
@@ -52,13 +51,13 @@ start_one() {
 	esac
 }
 
-pg_status="$(check_dev "$PIGUARD" &>/dev/null; echo $?)"
+# pg_status="$(check_dev "$PIGUARD" &>/dev/null; echo $?)"
 sf_status="$(check_dev "$SPOONFLOWER" &>/dev/null; echo $?)"
 
-case "${pg_status}${sf_status}" in
-	00) echo "Both interfaces are enabled!" >&2; start_one toggle || exit;;
-	01) piguard stop && spoonflower start;;
-	10) spoonflower stop && piguard start;;
-	11) echo "Neither interface is enabled!" >&2; start_one || exit;;
-	*) echo "ERROR! $PIGUARD: ${pg_status} - $SPOONFLOWER: ${sf_status}" >&2; exit "$(( pg_status + sf_status ))"
+case "${sf_status}" in
+	# 00) echo "Both interfaces are enabled!" >&2; start_one toggle || exit;;
+	# 01) piguard stop && spoonflower start;;
+	0) spoonflower stop;;
+	1) spoonflower start;;
+	*) echo "ERROR! - $SPOONFLOWER: ${sf_status}" >&2; exit "$(( sf_status ))"
 esac

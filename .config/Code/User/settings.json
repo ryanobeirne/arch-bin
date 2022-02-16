@@ -86,4 +86,6 @@
     "update.mode": "none",
     "C_Cpp.updateChannel": "Insiders",
     "python.jediEnabled": false,
+    "python.languageServer": "Microsoft",
+    "auto-build.defaultEnv.name": "STM32F103RET6_creality",
 }
