@@ -1,8 +1,9 @@
 #!/usr/bin/env zsh
 alias sudo='sudo -E '
 alias watch='watch '
-alias la='lsd -alhF --color=auto'
-alias ls='lsd -a --color=auto'
+alias la='exa -aalg --git --icons'
+alias ls='exa -aa'
+# alias lag='exa -al --git'
 alias cd='cd -P'
 alias pwd='pwd -P'
 alias grep='grep --color=auto'
@@ -28,7 +29,7 @@ alias dirty='GIT_PS1_SHOWDIRTYSTATE=true'
 alias journalctl='PAGER="less -IR" journalctl'
 alias less='less -IR'
 alias diff='diff --color=always -u'
-alias lb='lsblk -o name,label,fstype,size,fsavail,uuid,mountpoints'
+alias lb='lsblk -o name,label,fstype,size,fsavail,fsuse%,uuid,mountpoints'
 alias tree='tree -C'
 alias :q=exit
 alias :e='$EDITOR'
@@ -52,6 +53,7 @@ alias gdb='TERM=screen-256color gdb'
 alias rust-gdb='TERM=screen-256color rust-gdb'
 alias please='sudo $(fc -ln -1)'
 alias qping='ping -qW3 -c3'
+alias mpv='mpv --no-audio-display'
 
 # dirstack aliases
 for i in {0..9}; do alias "d${i}"="d $i"; done

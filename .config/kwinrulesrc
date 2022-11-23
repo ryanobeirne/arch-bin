@@ -88,7 +88,7 @@ desktopsrule=3
 title=reddit: the front page of the internet - Mozilla Firefox
 titlematch=0
 windowrole=browser
-windowrolematch=2
+windowrolematch=1
 wmclasscomplete=false
 
 [8]
