@@ -58,14 +58,13 @@ Description=Conky
 acceptfocusrule=2
 clientmachinematch=0
 fpplevelrule=2
-fsplevel=4
 fsplevelrule=2
 titlematch=0
 type=2
 typerule=2
 wmclass=conky
 wmclasscomplete=false
-wmclassmatch=1
+wmclassmatch=2
 
 [6]
 Description=Design Activity

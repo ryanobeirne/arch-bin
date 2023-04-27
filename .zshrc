@@ -1,7 +1,7 @@
 export HISTFILE=~/.zsh_history
 export SAVEHIST=10000
 export HISTSIZE=20000
-export EDITOR='vim'
+export EDITOR='nvim'
 export PAGER='less -iR'
 export GOPATH=~/go
 export LC_ALL=en_US.UTF-8
