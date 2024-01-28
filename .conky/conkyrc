@@ -93,9 +93,9 @@ ${upspeedgraph wlp5s0 37,217 022B41 97d8f4 -t} ${downspeedgraph wlp5s0 37,217 02
 ${color1}enp4s0: ${color}${alignr}${addr enp4s0}
 ${color1}Up:$color ${upspeed enp4s0} ${alignr}${color1}Down:$color ${downspeed enp4s0}
 ${upspeedgraph enp4s0 37,217 022B41 97d8f4 -t} ${downspeedgraph enp4s0 37,217 022B41 97d8f4 -t}
-${color1}enp6s0: ${color}${alignr}${addr enp6s0}
-${color1}Up:$color ${upspeed enp6s0} ${alignr}${color1}Down:$color ${downspeed enp6s0}
-${upspeedgraph enp6s0 37,217 022B41 97d8f4 -t} ${downspeedgraph enp6s0 37,217 022B41 97d8f4 -t}
+${color1}protonvpn1: ${color}${alignr}${addr protonvpn1}
+${color1}Up:$color ${upspeed protonvpn1} ${alignr}${color1}Down:$color ${downspeed protonvpn1}
+${upspeedgraph protonvpn1 37,217 022B41 97d8f4 -t} ${downspeedgraph protonvpn1 37,217 022B41 97d8f4 -t}
 
 
 ${color1}Processes:$color $processes  ${color1}Running:$color $running_processes

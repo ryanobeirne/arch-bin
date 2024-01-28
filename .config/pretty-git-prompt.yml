@@ -104,3 +104,5 @@ values:
     - type: stash
       pre_format: '%{%F{141}%}◙'
       post_format: '%{%f%}'
+ignore_dirs:
+  - '/home/ryanobeirne/repos/linux'
