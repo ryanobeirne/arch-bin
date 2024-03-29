@@ -594,6 +594,7 @@ decorations = "full"
 dynamic_title = true
 opacity = 0.9
 startup_mode = "Maximized"
+blur = true
 
 [window.dimensions]
 columns = 191

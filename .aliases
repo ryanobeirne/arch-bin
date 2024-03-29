@@ -11,7 +11,7 @@ alias reflect='reflector --verbose --country US --country CA --latest 50 --sort 
 alias vim=nvim
 alias view='vim -R'
 alias .a='$EDITOR ~/.aliases && . ~/.aliases'
-alias .A='$EDITOR ~/.config/alacritty/alacritty.yml'
+alias .A='$EDITOR ~/.config/alacritty/alacritty.toml'
 alias .b='$EDITOR ~/.bashrc && if [[ ${0} == bash ]]; then . ~/.bashrc; fi'
 alias .f='$EDITOR ~/.functions && . ~/.functions'
 alias .h='sudo $EDITOR /etc/hosts'
@@ -28,7 +28,7 @@ alias gsp='git status --porcelain'
 alias clean='unset GIT_PS1_SHOWDIRTYSTATE'
 alias dirty='GIT_PS1_SHOWDIRTYSTATE=true'
 alias journalctl='PAGER="less -IR" journalctl'
-alias less='less -IR'
+alias less='less -IR --redraw-on-quit'
 alias diff='diff --color=always -u'
 alias lb='lsblk -o name,label,fstype,size,fsavail,fsuse%,uuid,mountpoints'
 alias tree='tree -C'
@@ -55,7 +55,7 @@ alias rust-gdb='TERM=screen-256color rust-gdb'
 alias please='sudo $(fc -ln -1)'
 alias qping='ping -qW3 -c3'
 alias mpv='mpv --no-audio-display'
-alias cat=bat
+alias cat='bat --pager="$PAGER"'
 
 # dirstack aliases
 for i in {0..9}; do alias "d${i}"="d $i"; done

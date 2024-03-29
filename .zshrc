@@ -2,7 +2,7 @@ export HISTFILE=~/.zsh_history
 export SAVEHIST=10000
 export HISTSIZE=20000
 export EDITOR='nvim'
-export PAGER='less -iR'
+export PAGER='less -IR --redraw-on-quit'
 export GOPATH=~/go
 export LC_ALL=en_US.UTF-8
 export HOSTALIASES=~/.config/hosts
@@ -34,6 +34,7 @@ done
 appendfpath ~/.zsh/completions ~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/zsh/site-functions
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select
 
 # Load colors.
 autoload -U colors
