@@ -76,6 +76,9 @@ autoload -U compinit && compinit -i
 zmodload -i zsh/complist
 setopt correct autocd
 
+DIRSTACKSIZE=10
+setopt autopushd pushdminus pushdsilent pushdtohome
+
 # Blur terminal
 _ppid=$(ps --no-header -p $PPID -o comm)
 if [[ "$_ppid" =~ '^yakuake|alacritty|urxvt|vim$' ]]; then
