@@ -11,6 +11,7 @@ alias reflect='reflector --verbose --country US --country CA --latest 50 --sort 
 alias vim=nvim
 alias view='vim -R'
 alias .a='$EDITOR ~/.aliases && . ~/.aliases'
+alias .r='$EDITOR "$(bacon --prefs)"'
 alias .A='$EDITOR ~/.config/alacritty/alacritty.toml'
 alias .b='$EDITOR ~/.bashrc && if [[ ${0} == bash ]]; then . ~/.bashrc; fi'
 alias .f='$EDITOR ~/.functions && . ~/.functions'
@@ -47,7 +48,7 @@ alias ip='ip --color=auto'
 alias ipa='ip a'
 alias myip='curl -su "$USER:$HOST" https://d5.ryanobeirne.com -X POST'
 alias rsync='rsync --times --progress --partial --no-whole-file'
-alias jsync='sudo -u jellyfin rsync -ahP'
+alias jsync='sudo rsync -ahP --usermap=\*:jellyfin --groupmap=\*:jellyfin'
 alias qlook='feh -.'
 alias dig=drill
 alias gdb='TERM=screen-256color gdb'
@@ -56,6 +57,8 @@ alias please='sudo $(fc -ln -1)'
 alias qping='ping -qW3 -c3'
 alias mpv='mpv --no-audio-display'
 alias cat='bat --pager="$PAGER"'
+alias usort='sort | uniq -c | sort -n'
+alias rg='rg --no-ignore'
 
 # dirstack aliases
 for i in {0..9}; do alias "d${i}"="d $i"; done

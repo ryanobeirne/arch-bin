@@ -79,7 +79,7 @@
     "terminal.integrated.scrollback": 10000,
     "git.autofetch": true,
     "terminal.integrated.rendererType": "dom",
-    "workbench.editor.showTabs": true,
+    "workbench.editor.showTabs": "multiple",
     "explorer.confirmDelete": false,
     "update.showReleaseNotes": false,
     "terminal.integrated.fontFamily": "SauceCodePro Nerd Font Mono",
