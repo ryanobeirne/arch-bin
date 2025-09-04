@@ -11,6 +11,8 @@ export MAKEFLAGS="-j$(nproc)"
 export GPG_TTY="$(tty)"
 export CDPATH="$HOME/.bookmarks:/"
 
+export DEVELOPER_NAME="${USER}-${HOST}"
+
 [[ $- != *i* ]] && return
 
 sources=(

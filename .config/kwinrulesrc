@@ -188,13 +188,6 @@ types=1
 wmclass=steam_app_0
 wmclassmatch=1
 
-[86225ee6-7dac-4450-937c-b05e6f0712f7]
-Description=Settings for org.kde.krdc
-screen=1
-screenrule=4
-wmclass=org.kde.krdc
-wmclassmatch=1
-
 [9]
 Description=Design Activity
 activity=5f824a69-00d5-4c89-8b50-1bfbc313e859
@@ -207,8 +200,8 @@ wmclass=(gimp-2\\.10|inkscape|darktable)
 wmclassmatch=3
 
 [General]
-count=14
-rules=86225ee6-7dac-4450-937c-b05e6f0712f7,35c20572-15fd-40a9-9b8c-5eb84c7bbcdd,1,2,3,4,5,6,7,8,9,10,11,12
+count=13
+rules=35c20572-15fd-40a9-9b8c-5eb84c7bbcdd,1,2,3,4,5,6,7,8,9,10,11,12
 
 [c4c1fdaf-a101-4601-97cd-964e0d8e311b]
 Description=Window settings for steam_app_0
