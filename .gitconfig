@@ -43,6 +43,7 @@
 	sm = submodule
 	sma = submodule add
 	sp = status --porcelain
+	tl = l
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
@@ -58,7 +59,7 @@
 [commit]
 	gpgsign = true
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [push]
 	autoSetupRemote = true
 [diff]
